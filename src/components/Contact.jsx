@@ -89,9 +89,13 @@ function Contact() {
         message: formData.message.trim(),
       };
 
-      const serviceId = import.meta.env.VITE_EMAILJS_SERVICE_ID || "service_pgwpuzl";
-      const primaryTemplateId = import.meta.env.VITE_EMAILJS_TEMPLATE_ID || "template_hd2cebo";
+      const serviceId = import.meta.env.VITE_EMAILJS_SERVICE_ID || "service_pgwupzl";
+      const primaryTemplateId = import.meta.env.VITE_EMAILJS_TEMPLATE_ID || "s5g9sr8";
       const publicKey = import.meta.env.VITE_EMAILJS_PUBLIC_KEY || "OAifY5BpnP8W81siw";
+
+      const candidateServiceIds = Array.from(
+        new Set([serviceId, "service_pgwupzl", "service_pgwpuzl"])
+      );
 
       const candidateTemplateIds = Array.from(
         new Set([
@@ -99,8 +103,9 @@ function Contact() {
           primaryTemplateId.startsWith("template_")
             ? primaryTemplateId.replace(/^template_/, "")
             : `template_${primaryTemplateId}`,
-          "template_s5g9sr8",
           "s5g9sr8",
+          "template_s5g9sr8",
+          "hd2cebo",
           "template_hd2cebo",
         ])
       );
@@ -109,14 +114,17 @@ function Contact() {
         let lastError = null;
         let sentSuccessfully = false;
 
-        for (const tId of candidateTemplateIds) {
-          try {
-            await emailjs.send(serviceId, tId, templateParams, publicKey);
-            sentSuccessfully = true;
-            break;
-          } catch (err) {
-            lastError = err;
+        for (const sId of candidateServiceIds) {
+          for (const tId of candidateTemplateIds) {
+            try {
+              await emailjs.send(sId, tId, templateParams, publicKey);
+              sentSuccessfully = true;
+              break;
+            } catch (err) {
+              lastError = err;
+            }
           }
+          if (sentSuccessfully) break;
         }
 
         if (!sentSuccessfully) {

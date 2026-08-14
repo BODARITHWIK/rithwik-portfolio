@@ -69,7 +69,7 @@ function Certificates() {
         >
           <div className="inline-flex items-center gap-2 rounded-full border border-cyan-400/40 bg-slate-900/90 px-3.5 py-1 text-xs font-bold uppercase tracking-wider text-cyan-300 shadow-[0_0_12px_rgba(34,211,238,0.2)] font-mono">
             <Award className="h-3.5 w-3.5 text-cyan-400" />
-            <span>05 // CERTIFICATIONS</span>
+            <span>06 // CERTIFICATIONS</span>
           </div>
           <h2 className="text-3xl font-extrabold tracking-tight text-white sm:text-4xl lg:text-5xl font-outfit">
             Verified Certifications

@@ -16,10 +16,10 @@ import {
 function About() {
   const stats = [
     {
-      title: "B.Tech CSIT",
-      value: "CGPA 8.51",
-      sub: "First Priority Degree",
-      icon: GraduationCap,
+      title: "Full Stack Dev",
+      value: "Java & React",
+      sub: "Spring Boot, APIs & Web",
+      icon: Code2,
       color: "border-cyan-400/40 text-cyan-300 bg-cyan-500/10 shadow-[0_0_15px_rgba(34,211,238,0.2)]",
     },
     {

@@ -65,22 +65,14 @@ function Navbar() {
       }`}
     >
       <nav className="mx-auto flex max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8">
-        {/* Brand Logo & Professional Badge */}
+        {/* Brand Icon & Title */}
         <a
           href="#home"
           onClick={(e) => handleNavClick(e, "#home")}
           className="group flex items-center gap-3 font-bold tracking-tight text-white focus:outline-none"
         >
-          <div className="relative">
-            <img
-              src="/logo.png"
-              alt="Boda Rithwik Personal Logo"
-              className="h-10 w-10 sm:h-11 sm:w-11 rounded-xl object-contain border border-amber-400/50 bg-black p-0.5 transition-all duration-300 group-hover:scale-105 group-hover:border-amber-400 group-hover:shadow-[0_0_20px_rgba(245,158,11,0.5)]"
-            />
-            <span className="absolute -top-0.5 -right-0.5 flex h-3 w-3">
-              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-cyan-400 opacity-75"></span>
-              <span className="relative inline-flex rounded-full h-3 w-3 bg-cyan-400 border border-black"></span>
-            </span>
+          <div className="flex h-10 w-10 sm:h-11 sm:w-11 items-center justify-center rounded-xl border border-cyan-400/40 bg-slate-900 text-cyan-300 shadow-[0_0_15px_rgba(34,211,238,0.25)] transition-all duration-300 group-hover:scale-105 group-hover:border-cyan-400">
+            <Code2 className="h-5 w-5" />
           </div>
           <div className="flex flex-col">
             <span className="text-base font-extrabold tracking-wider uppercase font-outfit text-white leading-tight flex items-center gap-1">

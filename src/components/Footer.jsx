@@ -14,11 +14,9 @@ function Footer() {
           {/* Brand Info (Spans 6 cols) */}
           <div className="md:col-span-6 space-y-4">
             <div className="flex items-center gap-3">
-              <img
-                src="/logo.png"
-                alt="Boda Rithwik Personal Logo"
-                className="h-10 w-10 rounded-xl object-contain border border-amber-400/50 bg-black p-0.5"
-              />
+              <div className="flex h-10 w-10 items-center justify-center rounded-xl border border-cyan-400/40 bg-slate-900 text-cyan-300 shadow-[0_0_12px_rgba(34,211,238,0.2)]">
+                <Code2 className="h-5 w-5" />
+              </div>
               <div>
                 <h3 className="text-xl font-extrabold tracking-wider text-white font-outfit uppercase">
                   BODA RITHWIK

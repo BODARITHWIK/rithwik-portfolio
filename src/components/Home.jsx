@@ -10,18 +10,14 @@ import {
   Code2,
   Terminal,
   Cloud,
-  Cpu,
-  Layers,
-  CheckCircle2,
-  Server,
-  ShieldCheck,
   User,
   Download,
-  Mail
+  Mail,
+  CheckCircle2
 } from "lucide-react";
 
 function Home() {
-  const [activeTab, setActiveTab] = useState("portrait"); // "portrait" | "terminal" | "emblem"
+  const [activeTab, setActiveTab] = useState("portrait"); // "portrait" | "terminal"
 
   const badges = [
     "B.Tech CS",
@@ -197,30 +193,30 @@ const engineer = {
           </div>
         </motion.div>
 
-        {/* RIGHT COLUMN: MODERN SPLIT DASHBOARD CARD (Spans 5 columns on desktop) */}
+        {/* RIGHT COLUMN: MODERN DASHBOARD CARD */}
         <motion.div
           initial={{ opacity: 0, scale: 0.94 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.8, delay: 0.2, ease: [0.22, 1, 0.36, 1] }}
           className="lg:col-span-5 flex flex-col items-center justify-center w-full"
         >
-          {/* Card View Switcher */}
+          {/* Card View Switcher: Portrait and Code Spec only */}
           <div className="flex items-center justify-center gap-2 mb-4 z-10 bg-slate-900/90 p-1.5 rounded-full border border-white/10 backdrop-blur-xl">
             <button
               onClick={() => setActiveTab("portrait")}
-              className={`flex items-center gap-2 rounded-full px-4 py-1.5 text-xs font-bold transition-all duration-300 ${
+              className={`flex items-center gap-2 rounded-full px-5 py-1.5 text-xs font-bold transition-all duration-300 ${
                 activeTab === "portrait"
                   ? "bg-cyan-500/20 text-cyan-300 border border-cyan-400/60 shadow-[0_0_15px_rgba(34,211,238,0.3)]"
                   : "text-slate-400 hover:text-white"
               }`}
             >
               <User className="h-3.5 w-3.5" />
-              <span>Portrait</span>
+              <span>Portrait Photo</span>
             </button>
 
             <button
               onClick={() => setActiveTab("terminal")}
-              className={`flex items-center gap-2 rounded-full px-4 py-1.5 text-xs font-bold transition-all duration-300 ${
+              className={`flex items-center gap-2 rounded-full px-5 py-1.5 text-xs font-bold transition-all duration-300 ${
                 activeTab === "terminal"
                   ? "bg-teal-500/20 text-teal-300 border border-teal-400/60 shadow-[0_0_15px_rgba(20,184,166,0.3)]"
                   : "text-slate-400 hover:text-white"
@@ -229,24 +225,12 @@ const engineer = {
               <Terminal className="h-3.5 w-3.5" />
               <span>Code Spec</span>
             </button>
-
-            <button
-              onClick={() => setActiveTab("emblem")}
-              className={`flex items-center gap-2 rounded-full px-4 py-1.5 text-xs font-bold transition-all duration-300 ${
-                activeTab === "emblem"
-                  ? "bg-amber-500/20 text-amber-300 border border-amber-400/60 shadow-[0_0_15px_rgba(245,158,11,0.3)]"
-                  : "text-slate-400 hover:text-white"
-              }`}
-            >
-              <Sparkles className="h-3.5 w-3.5 text-amber-400" />
-              <span>Brand Logo</span>
-            </button>
           </div>
 
           {/* Main Visual Frame */}
           <div className="relative w-full max-w-md rounded-3xl border border-cyan-400/30 bg-slate-900/85 p-4 shadow-[0_0_50px_rgba(34,211,238,0.15)] backdrop-blur-2xl transition-all duration-500 hover:border-cyan-400/60 hover:shadow-[0_0_60px_rgba(34,211,238,0.25)]">
             
-            {activeTab === "portrait" && (
+            {activeTab === "portrait" ? (
               <div className="relative overflow-hidden rounded-2xl border border-white/10 group">
                 <img
                   src="/profile.jpg"
@@ -273,9 +257,7 @@ const engineer = {
                   </div>
                 </div>
               </div>
-            )}
-
-            {activeTab === "terminal" && (
+            ) : (
               <div className="rounded-2xl border border-cyan-400/30 bg-[#040812] p-5 shadow-2xl font-mono text-xs text-slate-200 h-[380px] sm:h-[460px] flex flex-col justify-between overflow-x-auto">
                 <div className="flex items-center justify-between border-b border-white/10 pb-3 mb-3">
                   <div className="flex items-center gap-2">
@@ -294,24 +276,6 @@ const engineer = {
                     <CheckCircle2 className="h-3.5 w-3.5" /> Ready for Production
                   </span>
                   <span>B.Tech Priority #1</span>
-                </div>
-              </div>
-            )}
-
-            {activeTab === "emblem" && (
-              <div className="relative overflow-hidden rounded-2xl border border-amber-400/40 bg-black p-6 flex flex-col items-center justify-center group h-[380px] sm:h-[460px] shadow-2xl">
-                <img
-                  src="/logo.png"
-                  alt="Boda Rithwik - Brand Logo Emblem"
-                  className="h-[300px] w-full object-contain filter drop-shadow-[0_0_30px_rgba(245,158,11,0.4)] transition-transform duration-700 group-hover:scale-105"
-                />
-                <div className="w-full mt-4 rounded-xl border border-amber-400/30 bg-slate-950/90 p-3 text-center backdrop-blur-xl">
-                  <div className="text-xs font-black tracking-widest text-amber-300 uppercase font-outfit">
-                    BODA RITHWIK
-                  </div>
-                  <div className="text-[10px] font-semibold text-slate-300 font-mono mt-0.5">
-                    Official Personal Brand Monogram
-                  </div>
                 </div>
               </div>
             )}

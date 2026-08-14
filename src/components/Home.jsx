@@ -10,7 +10,8 @@ import {
   Cloud,
   Download,
   Mail,
-  Briefcase
+  Briefcase,
+  Phone
 } from "lucide-react";
 
 function Home() {
@@ -173,9 +174,9 @@ function Home() {
           </div>
 
           {/* Social Links Row */}
-          <div className="flex items-center gap-4 pt-2">
+          <div className="flex flex-wrap items-center gap-4 pt-2">
             <span className="text-xs font-bold uppercase tracking-wider text-slate-400 font-mono">
-              Profiles:
+              Contact:
             </span>
             <a
               href="https://github.com/BODARITHWIK"
@@ -195,6 +196,14 @@ function Home() {
             >
               <Linkedin className="h-4 w-4 text-cyan-400" />
               <span>LinkedIn</span>
+            </a>
+            <span className="text-slate-600">•</span>
+            <a
+              href="tel:+916300933175"
+              className="flex items-center gap-2 text-xs font-bold text-slate-300 hover:text-cyan-300 transition-colors"
+            >
+              <Phone className="h-4 w-4 text-cyan-400" />
+              <span>+91 6300933175</span>
             </a>
           </div>
         </motion.div>

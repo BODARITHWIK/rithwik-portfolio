@@ -161,16 +161,19 @@ function Contact() {
       icon: Mail,
       title: "Email Address",
       value: "bodarithwik416@gmail.com",
+      href: "mailto:bodarithwik416@gmail.com",
     },
     {
       icon: Phone,
       title: "Phone Number",
       value: "+91 6300933175",
+      href: "tel:+916300933175",
     },
     {
       icon: MapPin,
       title: "Location",
       value: "Vijayawada / Anakapalle, Andhra Pradesh, India",
+      href: null,
     },
   ];
 
@@ -217,23 +220,25 @@ function Contact() {
               <div className="space-y-4">
                 {contactItems.map((item) => {
                   const Icon = item.icon;
+                  const CardComponent = item.href ? "a" : "div";
                   return (
-                    <div
+                    <CardComponent
                       key={item.title}
-                      className="flex items-center gap-4 rounded-2xl border border-white/10 bg-slate-950/80 p-4 transition-all duration-200 hover:border-cyan-400/40 hover:bg-slate-900"
+                      {...(item.href ? { href: item.href } : {})}
+                      className="flex items-center gap-4 rounded-2xl border border-white/10 bg-slate-950/80 p-4 transition-all duration-200 hover:border-cyan-400/40 hover:bg-slate-900 group"
                     >
-                      <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl border border-cyan-400/30 bg-cyan-500/10 text-cyan-300">
+                      <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl border border-cyan-400/30 bg-cyan-500/10 text-cyan-300 group-hover:scale-105 transition-transform">
                         <Icon className="h-5 w-5" />
                       </div>
                       <div>
                         <div className="text-xs font-bold text-slate-400 font-mono">
                           {item.title}
                         </div>
-                        <div className="text-sm font-bold text-white mt-0.5">
+                        <div className="text-sm font-bold text-white mt-0.5 group-hover:text-cyan-300 transition-colors">
                           {item.value}
                         </div>
                       </div>
-                    </div>
+                    </CardComponent>
                   );
                 })}
               </div>

@@ -1,4 +1,4 @@
-import { Github, Linkedin, Mail, ArrowUp, Code2, Heart, Sparkles } from "lucide-react";
+import { Github, Linkedin, Mail, Phone, ArrowUp, Code2, Heart, Sparkles } from "lucide-react";
 
 function Footer() {
   const scrollToTop = () => {
@@ -88,6 +88,13 @@ function Footer() {
               >
                 <Mail className="h-4 w-4 text-cyan-400" />
                 <span>bodarithwik416@gmail.com</span>
+              </a>
+              <a
+                href="tel:+916300933175"
+                className="flex items-center gap-2 text-slate-300 hover:text-cyan-300 transition-colors"
+              >
+                <Phone className="h-4 w-4 text-cyan-400" />
+                <span>+91 6300933175</span>
               </a>
             </div>
           </div>

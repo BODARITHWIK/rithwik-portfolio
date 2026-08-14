@@ -54,7 +54,7 @@ function Resumes() {
 
               {/* Title & Subtitle */}
               <h3 className="text-2xl font-extrabold tracking-tight text-white sm:text-3xl group-hover:text-cyan-300 transition-colors font-outfit">
-                B.Tech Computer Science Resume
+                B.Tech CSIT Resume
               </h3>
               <p className="text-sm font-bold text-cyan-400 mt-1 font-mono">
                 Computer Science & Information Technology (CSIT) / Cloud Native Engineering

@@ -35,7 +35,7 @@ function Home() {
   const codeSnippet = `// Boda Rithwik - Cloud Native Engineer
 const engineer = {
   name: "BODA RITHWIK",
-  degree: "B.Tech Computer Science (CGPA: 8.51)",
+  degree: "B.Tech CSIT (CGPA: 8.51)",
   specialization: "Cloud Native & DevOps",
   cloud: ["AWS", "Kubernetes", "Docker"],
   backend: ["Java", "Spring Boot", "REST APIs"],

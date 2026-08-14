@@ -73,10 +73,10 @@ function About() {
             <span>01 // ABOUT ME</span>
           </div>
           <h2 className="text-3xl font-extrabold tracking-tight text-white sm:text-4xl lg:text-5xl font-outfit">
-            Computer Science & Cloud Engineering
+            CSIT & Cloud Engineering
           </h2>
           <p className="text-base leading-relaxed text-slate-300 sm:text-lg">
-            I am a B.Tech Computer Science & Information Technology student at KL University specializing in cloud-native software development, microservices architecture, and DevOps engineering.
+            I am a B.Tech CSIT (Computer Science & Information Technology) student at KL University specializing in cloud-native software development, microservices architecture, and DevOps engineering.
           </p>
         </motion.div>
 

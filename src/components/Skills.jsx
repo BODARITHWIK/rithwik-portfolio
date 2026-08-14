@@ -27,7 +27,7 @@ function Skills() {
     },
     {
       id: "cs",
-      title: "Computer Science",
+      title: "CSIT Fundamentals",
       icon: Cpu,
       color: "border-blue-400/40 text-blue-300 bg-blue-500/10 shadow-[0_0_12px_rgba(59,130,246,0.2)]",
       skills: [

@@ -9,12 +9,14 @@ import {
   Code2,
   Cloud,
   Download,
-  Mail
+  Mail,
+  Briefcase
 } from "lucide-react";
 
 function Home() {
   const badges = [
     "B.Tech CSIT",
+    "BBA Dual Degree",
     "Cloud Native",
     "DevOps",
     "Full Stack",
@@ -53,7 +55,7 @@ function Home() {
               <span className="relative inline-flex h-2.5 w-2.5 rounded-full bg-cyan-400"></span>
             </span>
             <span className="text-xs font-bold uppercase tracking-widest text-cyan-300 font-mono">
-              B.Tech CSIT • KL University
+              B.Tech CSIT & BBA Dual Degree • KL University
             </span>
           </div>
 
@@ -69,18 +71,18 @@ function Home() {
               </span>
             </h1>
             <h3 className="text-lg sm:text-2xl font-bold text-cyan-300 font-outfit pt-1">
-              B.Tech CSIT Student <span className="text-slate-500">|</span> Cloud Native Software Engineering
+              B.Tech CSIT & BBA Dual Degree Student <span className="text-slate-500">|</span> Cloud Native Software Engineering & Business
             </h3>
           </div>
 
           {/* Supporting Text */}
           <p className="text-base sm:text-lg leading-relaxed text-slate-300 max-w-2xl">
-            Building scalable software, cloud-native applications, and modern DevOps solutions.
+            Building scalable software, cloud-native applications, and business management solutions.
           </p>
 
           {/* Quick Technical Highlights */}
-          <div className="grid grid-cols-2 gap-3 pt-2 max-w-xl">
-            <div className="flex items-center gap-2.5 rounded-2xl border border-cyan-400/25 bg-slate-900/70 p-3 backdrop-blur-md">
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 pt-2 max-w-2xl">
+            <div className="flex items-center gap-2.5 rounded-2xl border border-cyan-400/30 bg-slate-900/80 p-3 backdrop-blur-md shadow-[0_0_12px_rgba(34,211,238,0.15)]">
               <div className="flex h-8 w-8 items-center justify-center rounded-xl bg-cyan-500/20 text-cyan-300">
                 <Code2 className="h-4 w-4" />
               </div>
@@ -89,6 +91,17 @@ function Home() {
                 <div className="text-[11px] text-cyan-300 font-mono font-semibold">Primary • CGPA: 8.51</div>
               </div>
             </div>
+
+            <div className="flex items-center gap-2.5 rounded-2xl border border-purple-400/30 bg-slate-900/80 p-3 backdrop-blur-md shadow-[0_0_12px_rgba(168,85,247,0.15)]">
+              <div className="flex h-8 w-8 items-center justify-center rounded-xl bg-purple-500/20 text-purple-300">
+                <Briefcase className="h-4 w-4" />
+              </div>
+              <div>
+                <div className="text-xs font-bold text-white">BBA Degree</div>
+                <div className="text-[11px] text-purple-300 font-mono font-semibold">Dual • CGPA: 8.68</div>
+              </div>
+            </div>
+
             <div className="flex items-center gap-2.5 rounded-2xl border border-white/10 bg-slate-900/70 p-3 backdrop-blur-md">
               <div className="flex h-8 w-8 items-center justify-center rounded-xl bg-indigo-500/20 text-indigo-300">
                 <Cloud className="h-4 w-4" />
@@ -113,14 +126,14 @@ function Home() {
           </div>
 
           {/* Call-To-Action Buttons */}
-          <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3.5 pt-4">
+          <div className="flex flex-col sm:flex-row flex-wrap items-stretch sm:items-center gap-3 pt-4">
             <a
               href="#projects"
               onClick={(e) => {
                 e.preventDefault();
                 document.getElementById("projects")?.scrollIntoView({ behavior: "smooth" });
               }}
-              className="group relative inline-flex items-center justify-center gap-2.5 rounded-2xl bg-gradient-to-r from-cyan-400 to-teal-400 px-7 py-3.5 text-sm font-black text-slate-950 shadow-[0_0_25px_rgba(34,211,238,0.4)] transition-all duration-300 hover:from-cyan-300 hover:to-teal-300 hover:shadow-[0_0_35px_rgba(34,211,238,0.6)] hover:scale-[1.02] min-h-[48px]"
+              className="group relative inline-flex items-center justify-center gap-2 rounded-2xl bg-gradient-to-r from-cyan-400 to-teal-400 px-6 py-3.5 text-sm font-black text-slate-950 shadow-[0_0_25px_rgba(34,211,238,0.4)] transition-all duration-300 hover:from-cyan-300 hover:to-teal-300 hover:shadow-[0_0_35px_rgba(34,211,238,0.6)] hover:scale-[1.02] min-h-[48px]"
             >
               <span>View My Projects</span>
               <ArrowRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1.5" />
@@ -130,10 +143,20 @@ function Home() {
               href="/B.Tech-Resume.pdf"
               target="_blank"
               rel="noreferrer"
-              className="inline-flex items-center justify-center gap-2.5 rounded-2xl border border-cyan-400/50 bg-slate-900/90 px-6 py-3.5 text-sm font-bold text-cyan-300 backdrop-blur-xl transition-all duration-300 hover:border-cyan-400 hover:bg-cyan-500/20 hover:shadow-[0_0_20px_rgba(34,211,238,0.3)] min-h-[48px]"
+              className="inline-flex items-center justify-center gap-2 rounded-2xl border border-cyan-400/50 bg-slate-900/90 px-5 py-3.5 text-sm font-bold text-cyan-300 backdrop-blur-xl transition-all duration-300 hover:border-cyan-400 hover:bg-cyan-500/20 hover:shadow-[0_0_20px_rgba(34,211,238,0.3)] min-h-[48px]"
             >
               <Download className="h-4 w-4 text-cyan-400" />
               <span>Download B.Tech Resume</span>
+            </a>
+
+            <a
+              href="/BBA-Resume.pdf"
+              target="_blank"
+              rel="noreferrer"
+              className="inline-flex items-center justify-center gap-2 rounded-2xl border border-purple-400/50 bg-slate-900/90 px-5 py-3.5 text-sm font-bold text-purple-300 backdrop-blur-xl transition-all duration-300 hover:border-purple-400 hover:bg-purple-500/20 hover:shadow-[0_0_20px_rgba(168,85,247,0.3)] min-h-[48px]"
+            >
+              <Download className="h-4 w-4 text-purple-400" />
+              <span>Download BBA Resume</span>
             </a>
 
             <a
@@ -142,7 +165,7 @@ function Home() {
                 e.preventDefault();
                 document.getElementById("contact")?.scrollIntoView({ behavior: "smooth" });
               }}
-              className="inline-flex items-center justify-center gap-2.5 rounded-2xl border border-white/15 bg-slate-950/70 px-5 py-3.5 text-sm font-bold text-slate-200 backdrop-blur-xl transition-all duration-300 hover:border-white/30 hover:bg-slate-900 hover:text-white min-h-[48px]"
+              className="inline-flex items-center justify-center gap-2 rounded-2xl border border-white/15 bg-slate-950/70 px-4 py-3.5 text-sm font-bold text-slate-200 backdrop-blur-xl transition-all duration-300 hover:border-white/30 hover:bg-slate-900 hover:text-white min-h-[48px]"
             >
               <Mail className="h-4 w-4 text-slate-400" />
               <span>Contact Me</span>

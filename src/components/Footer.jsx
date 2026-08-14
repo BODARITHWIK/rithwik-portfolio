@@ -22,7 +22,7 @@ function Footer() {
                   BODA RITHWIK
                 </h3>
                 <p className="text-xs font-bold text-cyan-300 font-mono">
-                  B.Tech CSIT Student • Cloud Native Engineering
+                  B.Tech CSIT & BBA Dual Degree Student • Cloud Native & Business Engineering
                 </p>
               </div>
             </div>
@@ -102,7 +102,7 @@ function Footer() {
 
           <div className="flex items-center gap-4">
             <span className="text-[11px] font-mono text-cyan-300">
-              B.Tech CSIT (CGPA: 8.51) • KL University
+              B.Tech CSIT (CGPA: 8.51) & BBA (CGPA: 8.68) • KL University
             </span>
             <button
               onClick={scrollToTop}

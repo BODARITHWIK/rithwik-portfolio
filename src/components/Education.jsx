@@ -77,7 +77,7 @@ function Education() {
             Academic Qualifications
           </h2>
           <p className="text-base leading-relaxed text-slate-300 sm:text-lg">
-            My academic journey at KL University, giving top priority to B.Tech CSIT & Cloud Native Engineering.
+            My academic journey at KL University, specializing in B.Tech CSIT (Primary Engineering) and BBA Dual Degree (Business Administration).
           </p>
         </motion.div>
 

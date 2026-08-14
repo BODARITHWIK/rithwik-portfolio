@@ -79,7 +79,7 @@ function Navbar() {
               BODA RITHWIK<span className="text-cyan-400">.</span>
             </span>
             <span className="text-[10px] font-bold text-cyan-300 font-mono tracking-wider uppercase">
-              B.Tech CSIT • Cloud Native
+              B.Tech CSIT & BBA • Dual Degree
             </span>
           </div>
         </a>

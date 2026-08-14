@@ -22,10 +22,12 @@ function Footer() {
         <div className="grid gap-10 md:grid-cols-3 items-start justify-between">
           {/* Brand Col */}
           <div className="space-y-4">
-            <div className="flex items-center gap-2.5">
-              <div className="flex h-9 w-9 items-center justify-center rounded-xl border border-cyan-400/40 bg-cyan-500/10 text-cyan-400 shadow-[0_0_12px_rgba(34,211,238,0.25)]">
-                <Code2 className="h-5 w-5" />
-              </div>
+            <div className="flex items-center gap-3">
+              <img
+                src="/logo.png"
+                alt="Boda Rithwik Logo"
+                className="h-10 w-10 rounded-xl object-contain border border-amber-400/40 bg-black/50 p-0.5 shadow-[0_0_15px_rgba(245,158,11,0.3)]"
+              />
               <span className="text-xl font-black tracking-wider text-white font-outfit uppercase">
                 Boda Rithwik<span className="text-cyan-400">.</span>
               </span>

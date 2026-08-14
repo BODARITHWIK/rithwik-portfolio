@@ -76,20 +76,9 @@ function Home() {
           animate="visible"
           className="space-y-6 sm:space-y-8"
         >
-          {/* Brand Tag with Emblem */}
-          <motion.div variants={textItemVariants} className="flex flex-wrap items-center gap-3">
-            <div className="flex items-center gap-2.5 rounded-2xl border border-amber-400/50 bg-black/80 px-3 py-1.5 shadow-[0_0_20px_rgba(245,158,11,0.35)] backdrop-blur-xl">
-              <img
-                src="/logo.png"
-                alt="BR Monogram Logo"
-                className="h-8 w-8 rounded-lg object-contain bg-black p-0.5 border border-amber-400/60"
-              />
-              <span className="text-xs font-black tracking-widest text-amber-300 font-mono uppercase">
-                Boda Rithwik Personal Brand
-              </span>
-            </div>
-
-            <div className="inline-flex items-center gap-2.5 rounded-full border border-cyan-400/40 bg-slate-900/80 px-3.5 py-1.5 backdrop-blur-xl shadow-[0_0_20px_rgba(34,211,238,0.2)]">
+          {/* Status Badge */}
+          <motion.div variants={textItemVariants} className="inline-block">
+            <div className="inline-flex items-center gap-2.5 rounded-full border border-cyan-400/40 bg-slate-900/80 px-4 py-1.5 backdrop-blur-xl shadow-[0_0_20px_rgba(34,211,238,0.2)]">
               <span className="relative flex h-2.5 w-2.5">
                 <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-cyan-400 opacity-75"></span>
                 <span className="relative inline-flex h-2.5 w-2.5 rounded-full bg-cyan-400"></span>

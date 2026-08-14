@@ -7,7 +7,6 @@ import {
   Server,
   Cloud,
   Workflow,
-  Activity,
   Database,
   Sparkles,
   CheckCircle2
@@ -71,13 +70,6 @@ function Skills() {
         "GitHub Actions",
         "CI/CD",
       ],
-    },
-    {
-      id: "monitoring",
-      title: "Monitoring",
-      icon: Activity,
-      color: "border-amber-400/40 text-amber-300 bg-amber-500/10 shadow-[0_0_12px_rgba(245,158,11,0.2)]",
-      skills: ["Prometheus", "Grafana", "ELK Stack"],
     },
     {
       id: "databases",

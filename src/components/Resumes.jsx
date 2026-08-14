@@ -1,10 +1,11 @@
 import { motion } from "framer-motion";
-import { FileText, ExternalLink, Download, Sparkles, Code2, Briefcase, Star } from "lucide-react";
+import { FileText, ExternalLink, Download, Sparkles, Code2, Briefcase, Star, CheckCircle2 } from "lucide-react";
 
 function Resumes() {
   return (
-    <section id="resumes" className="relative py-20 lg:py-28">
+    <section id="resumes" className="relative py-20 lg:py-28 bg-[#070d19]">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        
         {/* Section Header */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -13,38 +14,38 @@ function Resumes() {
           transition={{ duration: 0.5 }}
           className="max-w-3xl space-y-3"
         >
-          <div className="inline-flex items-center gap-2 rounded-full border border-cyan-400/40 bg-gradient-to-r from-cyan-500/15 to-blue-500/10 px-3.5 py-1 text-xs font-bold uppercase tracking-wider text-cyan-300 shadow-[0_0_12px_rgba(34,211,238,0.2)] font-mono">
-            <Sparkles className="h-3.5 w-3.5" />
-            <span>06 // MY RESUMES</span>
+          <div className="inline-flex items-center gap-2 rounded-full border border-cyan-400/40 bg-slate-900/90 px-3.5 py-1 text-xs font-bold uppercase tracking-wider text-cyan-300 shadow-[0_0_12px_rgba(34,211,238,0.2)] font-mono">
+            <FileText className="h-3.5 w-3.5 text-cyan-400" />
+            <span>06 // RESUMES</span>
           </div>
           <h2 className="text-3xl font-extrabold tracking-tight text-white sm:text-4xl lg:text-5xl font-outfit">
-            My Resumes
+            Professional Resumes
           </h2>
           <p className="text-base leading-relaxed text-slate-300 sm:text-lg">
-            Download my resumes to learn more about my education, technical skills, projects, and business administration background.
+            Review and download my specialized resumes for software engineering and business management positions.
           </p>
         </motion.div>
 
         {/* Resumes Grid */}
-        <div className="mt-12 grid gap-8 md:grid-cols-12 lg:gap-8 items-stretch">
+        <div className="mt-12 grid gap-8 md:grid-cols-12 items-stretch">
           
-          {/* CARD 1: B.Tech Resume (⭐ Primary - Spans 7 columns on desktop for prominent visual weight) */}
+          {/* CARD 01: B.Tech Resume (⭐ PRIMARY - Large featured 7 cols card) */}
           <motion.div
             initial={{ opacity: 0, y: 25 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5 }}
-            className="md:col-span-7 group relative flex flex-col justify-between overflow-hidden rounded-3xl border-2 border-cyan-400/60 bg-gradient-to-b from-slate-900/90 via-slate-900/80 to-slate-950/90 p-7 sm:p-8 backdrop-blur-2xl shadow-[0_0_35px_rgba(34,211,238,0.2)] transition-all duration-300 hover:-translate-y-2 hover:border-cyan-400 hover:shadow-[0_0_45px_rgba(34,211,238,0.35)]"
+            className="md:col-span-7 group relative flex flex-col justify-between overflow-hidden rounded-3xl border-2 border-cyan-400/60 bg-gradient-to-b from-slate-900/95 via-slate-900/85 to-slate-950/95 p-7 sm:p-9 backdrop-blur-2xl shadow-[0_0_40px_rgba(34,211,238,0.2)] transition-all duration-300 hover:-translate-y-2 hover:border-cyan-400 hover:shadow-[0_0_55px_rgba(34,211,238,0.35)]"
           >
             {/* Top Cyan Highlight Beam */}
-            <div className="absolute top-0 left-0 right-0 h-1.5 bg-gradient-to-r from-cyan-500 via-cyan-300 to-blue-500" />
+            <div className="absolute top-0 left-0 right-0 h-1.5 bg-gradient-to-r from-cyan-400 via-teal-300 to-indigo-500" />
 
             <div>
               {/* Header Badges */}
               <div className="flex flex-wrap items-center justify-between gap-2 mb-5">
                 <span className="inline-flex items-center gap-1.5 rounded-full border border-cyan-400/50 bg-cyan-500/20 px-3.5 py-1 text-xs font-extrabold text-cyan-300 shadow-[0_0_12px_rgba(34,211,238,0.3)] font-mono">
                   <Star className="h-3.5 w-3.5 fill-cyan-300 text-cyan-300" />
-                  <span>PRIMARY QUALIFICATION</span>
+                  <span>01 — B.TECH RESUME — PRIMARY</span>
                 </span>
                 <div className="flex h-12 w-12 items-center justify-center rounded-2xl border border-cyan-400/40 bg-cyan-500/15 text-cyan-300 shadow-[0_0_15px_rgba(34,211,238,0.2)]">
                   <Code2 className="h-6 w-6" />
@@ -53,28 +54,27 @@ function Resumes() {
 
               {/* Title & Subtitle */}
               <h3 className="text-2xl font-extrabold tracking-tight text-white sm:text-3xl group-hover:text-cyan-300 transition-colors font-outfit">
-                B.Tech Resume
+                B.Tech Computer Science Resume
               </h3>
-              <p className="text-sm font-bold text-cyan-400 mt-1 font-outfit">
+              <p className="text-sm font-bold text-cyan-400 mt-1 font-mono">
                 Computer Science & Information Technology (CSIT) / Cloud Native Engineering
               </p>
 
               {/* Description */}
               <p className="mt-4 text-sm sm:text-base leading-relaxed text-slate-200">
-                B.Tech Resume - Computer Science & Information Technology (CSIT) / Cloud Native Software Engineering profile.
+                Primary engineering resume emphasizing full-stack software development, containerized microservices architectures, AWS cloud infrastructure, Kubernetes, and Data Structures & Algorithms.
               </p>
 
-              {/* Highlights Pill Stack */}
+              {/* Highlights Pills */}
               <div className="mt-6 flex flex-wrap gap-2">
                 {[
-                  "CSIT (Computer Science)",
-                  "Full Stack Development",
+                  "B.Tech CSIT (CGPA: 8.51)",
                   "Cloud Native & Microservices",
-                  "React.js & Node.js",
-                  "Spring Boot",
+                  "Java & Spring Boot",
+                  "React.js & Full Stack",
                   "AWS & Kubernetes",
-                  "DevOps & GitHub Actions",
-                  "DSA & REST APIs",
+                  "Docker & CI/CD",
+                  "RESTful APIs & MySQL",
                 ].map((pill) => (
                   <span
                     key={pill}
@@ -92,36 +92,36 @@ function Resumes() {
                 href="/B.Tech-Resume.pdf"
                 target="_blank"
                 rel="noreferrer"
-                className="inline-flex flex-1 items-center justify-center gap-2 rounded-xl bg-gradient-to-r from-cyan-400 to-cyan-300 px-5 py-3.5 text-xs sm:text-sm font-bold text-slate-950 shadow-[0_0_20px_rgba(34,211,238,0.4)] transition-all duration-300 hover:from-cyan-300 hover:to-cyan-200 hover:shadow-[0_0_30px_rgba(34,211,238,0.6)] hover:scale-[1.02]"
+                className="inline-flex flex-1 items-center justify-center gap-2 rounded-2xl bg-gradient-to-r from-cyan-400 to-teal-400 px-5 py-3.5 text-xs sm:text-sm font-black text-slate-950 shadow-[0_0_20px_rgba(34,211,238,0.4)] transition-all duration-300 hover:from-cyan-300 hover:to-teal-300 hover:shadow-[0_0_30px_rgba(34,211,238,0.6)] hover:scale-[1.02] min-h-[48px]"
               >
                 <ExternalLink className="h-4 w-4" />
-                <span>View Resume</span>
+                <span>View B.Tech Resume</span>
               </a>
 
               <a
                 href="/B.Tech-Resume.pdf"
                 download="B.Tech-Resume.pdf"
-                className="inline-flex flex-1 items-center justify-center gap-2 rounded-xl border border-cyan-400/40 bg-slate-950/90 px-5 py-3.5 text-xs sm:text-sm font-bold text-cyan-300 transition-all duration-300 hover:border-cyan-400 hover:bg-cyan-500/20 hover:shadow-[0_0_15px_rgba(34,211,238,0.2)]"
+                className="inline-flex flex-1 items-center justify-center gap-2 rounded-2xl border border-cyan-400/40 bg-slate-950/90 px-5 py-3.5 text-xs sm:text-sm font-bold text-cyan-300 transition-all duration-300 hover:border-cyan-400 hover:bg-cyan-500/20 hover:shadow-[0_0_15px_rgba(34,211,238,0.2)] min-h-[48px]"
               >
                 <Download className="h-4 w-4 text-cyan-400" />
-                <span>Download Resume</span>
+                <span>Download B.Tech Resume</span>
               </a>
             </div>
           </motion.div>
 
-          {/* CARD 2: BBA Resume (Secondary - Spans 5 columns on desktop) */}
+          {/* CARD 02: BBA Resume (Secondary - 5 cols card) */}
           <motion.div
             initial={{ opacity: 0, y: 25 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.5, delay: 0.15 }}
+            transition={{ duration: 0.5, delay: 0.12 }}
             className="md:col-span-5 group relative flex flex-col justify-between overflow-hidden rounded-3xl border border-white/10 bg-slate-900/60 p-7 backdrop-blur-xl transition-all duration-300 hover:-translate-y-2 hover:border-cyan-400/40 hover:bg-slate-900/90 hover:shadow-2xl hover:shadow-cyan-950/30"
           >
             <div>
-              {/* Header Badge & Icon */}
-              <div className="flex items-center justify-between mb-4">
-                <span className="rounded-full border border-white/10 bg-slate-950/80 px-3.5 py-1 text-xs font-semibold text-slate-400 font-mono">
-                  Secondary Profile
+              {/* Header Badge */}
+              <div className="flex items-center justify-between mb-5">
+                <span className="rounded-full border border-slate-700 bg-slate-800/80 px-3.5 py-1 text-xs font-bold text-slate-300 font-mono">
+                  02 — BBA RESUME — SECONDARY
                 </span>
                 <div className="flex h-11 w-11 items-center justify-center rounded-2xl border border-white/10 bg-slate-950/80 text-slate-400">
                   <Briefcase className="h-5 w-5" />
@@ -129,25 +129,25 @@ function Resumes() {
               </div>
 
               {/* Title & Subtitle */}
-              <h3 className="text-xl font-bold tracking-tight text-white group-hover:text-cyan-300 transition-colors font-outfit">
-                BBA Resume
+              <h3 className="text-xl font-extrabold tracking-tight text-white group-hover:text-cyan-300 transition-colors font-outfit">
+                BBA Business Resume
               </h3>
-              <p className="text-xs font-semibold text-slate-400 mt-1 font-outfit">
-                Business Administration
+              <p className="text-xs font-bold text-slate-400 mt-1 font-mono">
+                Bachelor of Business Administration (Dual Degree)
               </p>
 
               {/* Description */}
               <p className="mt-4 text-sm leading-relaxed text-slate-300">
-                BBA Resume - Business Administration profile.
+                Secondary business resume detailing digital marketing strategies, market research capstone, consumer behavior analysis, and project management.
               </p>
 
-              {/* Skills Pills */}
+              {/* Pills */}
               <div className="mt-6 flex flex-wrap gap-2">
                 {[
-                  "Digital Marketing",
+                  "BBA Dual Degree (CGPA: 8.68)",
+                  "Digital Marketing Research",
                   "Content Strategy",
-                  "Customer Relationship Management",
-                  "Advertising & Sales Promotion",
+                  "SWOT & ROI Analysis",
                 ].map((pill) => (
                   <span
                     key={pill}
@@ -165,19 +165,19 @@ function Resumes() {
                 href="/BBA-Resume.pdf"
                 target="_blank"
                 rel="noreferrer"
-                className="inline-flex flex-1 items-center justify-center gap-2 rounded-xl border border-cyan-400/40 bg-cyan-500/10 px-4 py-3 text-xs font-bold text-cyan-300 transition-all duration-300 hover:bg-cyan-400 hover:text-slate-950 hover:shadow-[0_0_20px_rgba(34,211,238,0.4)]"
+                className="inline-flex flex-1 items-center justify-center gap-2 rounded-2xl border border-white/20 bg-slate-950/80 px-4 py-3 text-xs font-bold text-slate-200 transition-all duration-300 hover:border-cyan-400/50 hover:bg-slate-900 hover:text-cyan-300 min-h-[44px]"
               >
                 <ExternalLink className="h-4 w-4" />
-                <span>View Resume</span>
+                <span>View BBA Resume</span>
               </a>
 
               <a
                 href="/BBA-Resume.pdf"
                 download="BBA-Resume.pdf"
-                className="inline-flex flex-1 items-center justify-center gap-2 rounded-xl border border-white/15 bg-slate-950/80 px-4 py-3 text-xs font-bold text-slate-200 transition-all duration-300 hover:border-cyan-400/50 hover:bg-slate-900 hover:text-white hover:shadow-[0_0_15px_rgba(34,211,238,0.2)]"
+                className="inline-flex flex-1 items-center justify-center gap-2 rounded-2xl border border-white/15 bg-slate-950/80 px-4 py-3 text-xs font-bold text-slate-300 transition-all duration-300 hover:border-cyan-400/50 hover:bg-slate-900 hover:text-white min-h-[44px]"
               >
-                <Download className="h-4 w-4 text-cyan-400" />
-                <span>Download Resume</span>
+                <Download className="h-4 w-4 text-slate-400" />
+                <span>Download BBA Resume</span>
               </a>
             </div>
           </motion.div>

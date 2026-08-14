@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Github, Linkedin, FileText, Menu, X, Code2, Sparkles, ChevronDown } from "lucide-react";
+import { Github, Linkedin, FileText, Menu, X, Code2, Sparkles, ChevronDown, Award, FolderKanban, GraduationCap, UserCheck, Mail } from "lucide-react";
 
 function Navbar() {
   const [activeSection, setActiveSection] = useState("home");
@@ -10,13 +10,12 @@ function Navbar() {
 
   const navLinks = [
     { name: "Home", href: "#home" },
-    { name: "Resumes", href: "#resumes" },
     { name: "About", href: "#about" },
+    { name: "Education", href: "#education" },
     { name: "Skills", href: "#skills" },
     { name: "Projects", href: "#projects" },
-    { name: "Education", href: "#education" },
     { name: "Certifications", href: "#certificates" },
-    { name: "GitHub", href: "#github-activity" },
+    { name: "Resumes", href: "#resumes" },
     { name: "Contact", href: "#contact" },
   ];
 
@@ -61,12 +60,12 @@ function Navbar() {
     <header
       className={`fixed inset-x-0 top-0 z-50 transition-all duration-300 ${
         isScrolled
-          ? "border-b border-white/10 bg-slate-950/85 py-3 shadow-2xl backdrop-blur-2xl"
+          ? "border-b border-cyan-500/15 bg-[#050b14]/90 py-3 shadow-2xl backdrop-blur-2xl"
           : "bg-transparent py-5"
       }`}
     >
       <nav className="mx-auto flex max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8">
-        {/* Brand Logo */}
+        {/* Brand Logo & Professional Badge */}
         <a
           href="#home"
           onClick={(e) => handleNavClick(e, "#home")}
@@ -75,26 +74,26 @@ function Navbar() {
           <div className="relative">
             <img
               src="/logo.png"
-              alt="Boda Rithwik Logo"
-              className="h-11 w-11 rounded-xl object-contain border border-amber-400/50 bg-black p-0.5 transition-all duration-300 group-hover:scale-105 group-hover:border-amber-400 group-hover:shadow-[0_0_25px_rgba(245,158,11,0.6)]"
+              alt="Boda Rithwik Personal Logo"
+              className="h-10 w-10 sm:h-11 sm:w-11 rounded-xl object-contain border border-amber-400/50 bg-black p-0.5 transition-all duration-300 group-hover:scale-105 group-hover:border-amber-400 group-hover:shadow-[0_0_20px_rgba(245,158,11,0.5)]"
             />
             <span className="absolute -top-0.5 -right-0.5 flex h-3 w-3">
-              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-amber-400 opacity-75"></span>
-              <span className="relative inline-flex rounded-full h-3 w-3 bg-amber-400 border border-black"></span>
+              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-cyan-400 opacity-75"></span>
+              <span className="relative inline-flex rounded-full h-3 w-3 bg-cyan-400 border border-black"></span>
             </span>
           </div>
           <div className="flex flex-col">
-            <span className="text-base font-black tracking-wider uppercase font-outfit text-white leading-tight">
-              Boda Rithwik<span className="text-cyan-400">.</span>
+            <span className="text-base font-extrabold tracking-wider uppercase font-outfit text-white leading-tight flex items-center gap-1">
+              BODA RITHWIK<span className="text-cyan-400">.</span>
             </span>
-            <span className="text-[10px] font-bold text-amber-400/90 font-mono tracking-wider uppercase">
-              Cloud & Full-Stack Eng.
+            <span className="text-[10px] font-bold text-cyan-300 font-mono tracking-wider uppercase">
+              B.Tech CSIT • Cloud Native
             </span>
           </div>
         </a>
 
-        {/* Desktop Navigation */}
-        <div className="hidden items-center gap-1 rounded-full border border-white/10 bg-slate-900/75 px-3 py-1.5 backdrop-blur-xl md:flex lg:gap-1.5 shadow-inner">
+        {/* Desktop Navigation Bar */}
+        <div className="hidden items-center gap-1 rounded-full border border-white/10 bg-slate-900/80 px-3 py-1.5 backdrop-blur-xl md:flex lg:gap-1 shadow-inner">
           {navLinks.map((link) => {
             const isActive = activeSection === link.href.substring(1);
             return (
@@ -102,16 +101,16 @@ function Navbar() {
                 key={link.name}
                 href={link.href}
                 onClick={(e) => handleNavClick(e, link.href)}
-                className={`relative px-3.5 py-1.5 text-xs font-semibold transition-colors duration-200 lg:text-sm ${
+                className={`relative px-3 py-1.5 text-xs font-bold transition-colors duration-200 lg:text-sm ${
                   isActive
-                    ? "text-cyan-300 font-bold"
+                    ? "text-cyan-300 font-extrabold"
                     : "text-slate-300 hover:text-white"
                 }`}
               >
                 {isActive && (
                   <motion.span
                     layoutId="activeNavTab"
-                    className="absolute inset-0 z-0 rounded-full bg-cyan-400/15 border border-cyan-400/30 shadow-[0_0_12px_rgba(34,211,238,0.2)]"
+                    className="absolute inset-0 z-0 rounded-full bg-gradient-to-r from-cyan-500/20 to-teal-500/15 border border-cyan-400/35 shadow-[0_0_12px_rgba(34,211,238,0.25)]"
                     transition={{ type: "spring", stiffness: 380, damping: 30 }}
                   />
                 )}
@@ -121,14 +120,14 @@ function Navbar() {
           })}
         </div>
 
-        {/* Right CTA & Social Icons */}
+        {/* Right CTA Buttons & Social Icons */}
         <div className="hidden items-center gap-2.5 sm:flex">
           <a
             href="https://github.com/BODARITHWIK"
             target="_blank"
             rel="noreferrer"
             aria-label="GitHub Profile"
-            className="flex h-9 w-9 items-center justify-center rounded-xl border border-white/10 bg-slate-900/70 text-slate-300 transition-all duration-300 hover:border-cyan-400/40 hover:bg-slate-800 hover:text-white hover:shadow-[0_0_15px_rgba(34,211,238,0.2)]"
+            className="flex h-9 w-9 items-center justify-center rounded-xl border border-white/10 bg-slate-900/80 text-slate-300 transition-all duration-300 hover:border-cyan-400/50 hover:bg-slate-800 hover:text-cyan-300 hover:shadow-[0_0_15px_rgba(34,211,238,0.25)]"
           >
             <Github className="h-4 w-4" />
           </a>
@@ -137,12 +136,12 @@ function Navbar() {
             target="_blank"
             rel="noreferrer"
             aria-label="LinkedIn Profile"
-            className="flex h-9 w-9 items-center justify-center rounded-xl border border-white/10 bg-slate-900/70 text-slate-300 transition-all duration-300 hover:border-cyan-400/40 hover:bg-slate-800 hover:text-white hover:shadow-[0_0_15px_rgba(34,211,238,0.2)]"
+            className="flex h-9 w-9 items-center justify-center rounded-xl border border-white/10 bg-slate-900/80 text-slate-300 transition-all duration-300 hover:border-cyan-400/50 hover:bg-slate-800 hover:text-cyan-300 hover:shadow-[0_0_15px_rgba(34,211,238,0.25)]"
           >
             <Linkedin className="h-4 w-4" />
           </a>
 
-          {/* Resumes Dropdown for B.Tech & BBA */}
+          {/* Quick Resumes Dropdown */}
           <div
             className="relative"
             onMouseEnter={() => setIsResumeDropdownOpen(true)}
@@ -150,14 +149,13 @@ function Navbar() {
           >
             <button
               onClick={() => setIsResumeDropdownOpen(!isResumeDropdownOpen)}
-              className="group relative inline-flex items-center gap-2 overflow-hidden rounded-xl border border-cyan-400/30 bg-gradient-to-r from-cyan-500/10 via-cyan-400/15 to-blue-500/10 px-4 py-2 text-xs font-semibold text-cyan-300 transition-all duration-300 hover:border-cyan-400 hover:bg-cyan-400 hover:text-slate-950 hover:shadow-[0_0_22px_rgba(34,211,238,0.45)]"
+              className="group relative inline-flex items-center gap-2 overflow-hidden rounded-xl border border-cyan-400/40 bg-gradient-to-r from-cyan-500/15 to-teal-500/15 px-4 py-2 text-xs font-bold text-cyan-300 transition-all duration-300 hover:border-cyan-400 hover:bg-cyan-400 hover:text-slate-950 hover:shadow-[0_0_22px_rgba(34,211,238,0.45)]"
             >
-              <FileText className="h-3.5 w-3.5 transition-transform group-hover:scale-110" />
-              <span>Resumes (PDF)</span>
+              <FileText className="h-3.5 w-3.5" />
+              <span>Resumes</span>
               <ChevronDown className={`h-3.5 w-3.5 transition-transform duration-200 ${isResumeDropdownOpen ? "rotate-180" : ""}`} />
             </button>
 
-            {/* Dropdown Card */}
             <AnimatePresence>
               {isResumeDropdownOpen && (
                 <motion.div
@@ -165,20 +163,23 @@ function Navbar() {
                   animate={{ opacity: 1, y: 0, scale: 1 }}
                   exit={{ opacity: 0, y: 8, scale: 0.95 }}
                   transition={{ duration: 0.18 }}
-                  className="absolute right-0 mt-2 w-64 rounded-2xl border border-cyan-400/30 bg-slate-950/95 p-2 shadow-2xl backdrop-blur-2xl z-50"
+                  className="absolute right-0 mt-2 w-64 rounded-2xl border border-cyan-400/30 bg-slate-950/95 p-2.5 shadow-2xl backdrop-blur-2xl z-50"
                 >
                   <a
                     href="/B.Tech-Resume.pdf"
                     target="_blank"
                     rel="noreferrer"
-                    className="flex items-center gap-3 rounded-xl p-2.5 transition-all duration-200 hover:bg-cyan-500/15 border border-transparent hover:border-cyan-400/30"
+                    className="flex items-center gap-3 rounded-xl p-2.5 transition-all duration-200 hover:bg-cyan-500/20 border border-cyan-400/20 bg-cyan-950/30"
                   >
-                    <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-cyan-500/20 text-cyan-300">
-                      <Code2 className="h-4 w-4" />
+                    <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-cyan-500/20 text-cyan-300 font-bold text-xs">
+                      01
                     </div>
                     <div>
-                      <div className="text-xs font-bold text-white">B.Tech Resume</div>
-                      <div className="text-[10px] text-cyan-300 font-medium font-mono">CSIT & Cloud Native</div>
+                      <div className="text-xs font-bold text-white flex items-center gap-1">
+                        <span>B.Tech Resume</span>
+                        <span className="text-[9px] bg-cyan-400 text-slate-950 px-1.5 py-0.5 rounded font-black">PRIMARY</span>
+                      </div>
+                      <div className="text-[10px] text-cyan-300 font-mono mt-0.5">Computer Science / Cloud</div>
                     </div>
                   </a>
 
@@ -186,14 +187,14 @@ function Navbar() {
                     href="/BBA-Resume.pdf"
                     target="_blank"
                     rel="noreferrer"
-                    className="flex items-center gap-3 rounded-xl p-2.5 transition-all duration-200 hover:bg-teal-500/15 border border-transparent hover:border-teal-400/30 mt-1"
+                    className="flex items-center gap-3 rounded-xl p-2.5 transition-all duration-200 hover:bg-slate-900 border border-white/10 mt-1.5"
                   >
-                    <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-teal-500/20 text-teal-300">
-                      <Sparkles className="h-4 w-4" />
+                    <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-slate-800 text-slate-400 font-bold text-xs">
+                      02
                     </div>
                     <div>
-                      <div className="text-xs font-bold text-white">BBA Resume</div>
-                      <div className="text-[10px] text-teal-300 font-medium font-mono">Business Administration</div>
+                      <div className="text-xs font-bold text-slate-200">BBA Resume</div>
+                      <div className="text-[10px] text-slate-400 font-mono mt-0.5">Business Administration</div>
                     </div>
                   </a>
                 </motion.div>
@@ -207,7 +208,7 @@ function Navbar() {
           <a
             href="#resumes"
             onClick={(e) => handleNavClick(e, "#resumes")}
-            className="inline-flex items-center gap-1.5 rounded-lg border border-cyan-400/30 bg-cyan-500/10 px-3 py-1.5 text-xs font-semibold text-cyan-300"
+            className="inline-flex items-center gap-1.5 rounded-lg border border-cyan-400/40 bg-cyan-500/10 px-3 py-1.5 text-xs font-bold text-cyan-300"
           >
             <FileText className="h-3.5 w-3.5" />
             <span>Resumes</span>
@@ -215,7 +216,7 @@ function Navbar() {
           <button
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
             aria-label="Toggle Navigation Menu"
-            className="flex h-10 w-10 items-center justify-center rounded-xl border border-white/10 bg-slate-900/80 text-slate-300 focus:outline-none"
+            className="flex h-10 w-10 items-center justify-center rounded-xl border border-white/10 bg-slate-900/90 text-slate-300 focus:outline-none"
           >
             {isMobileMenuOpen ? (
               <X className="h-5 w-5 text-cyan-400" />
@@ -226,7 +227,7 @@ function Navbar() {
         </div>
       </nav>
 
-      {/* Mobile Animated Menu Drawer */}
+      {/* Mobile Navigation Drawer */}
       <AnimatePresence>
         {isMobileMenuOpen && (
           <motion.div
@@ -234,7 +235,7 @@ function Navbar() {
             animate={{ opacity: 1, height: "auto" }}
             exit={{ opacity: 0, height: 0 }}
             transition={{ duration: 0.25, ease: "easeInOut" }}
-            className="border-b border-white/10 bg-slate-950/95 px-4 pt-2 pb-6 backdrop-blur-2xl sm:hidden shadow-2xl"
+            className="border-b border-cyan-500/20 bg-[#050b14]/98 px-4 pt-2 pb-6 backdrop-blur-2xl sm:hidden shadow-2xl"
           >
             <div className="flex flex-col space-y-1 pt-2">
               {navLinks.map((link) => {
@@ -246,7 +247,7 @@ function Navbar() {
                     onClick={(e) => handleNavClick(e, link.href)}
                     className={`flex items-center justify-between rounded-xl px-4 py-2.5 text-sm font-semibold transition-all ${
                       isActive
-                        ? "bg-cyan-500/15 text-cyan-300 border border-cyan-400/30 shadow-[0_0_12px_rgba(34,211,238,0.2)]"
+                        ? "bg-cyan-500/15 text-cyan-300 border border-cyan-400/40 shadow-[0_0_12px_rgba(34,211,238,0.2)]"
                         : "text-slate-300 hover:bg-white/5 hover:text-white"
                     }`}
                   >
@@ -259,46 +260,46 @@ function Navbar() {
               })}
             </div>
 
-            {/* Mobile Resume Action Buttons for both B.Tech & BBA */}
+            {/* Mobile Resume Action Buttons */}
             <div className="mt-4 grid grid-cols-2 gap-2 pt-3 border-t border-white/10">
               <a
                 href="/B.Tech-Resume.pdf"
                 target="_blank"
                 rel="noreferrer"
-                className="flex items-center justify-center gap-1.5 rounded-xl border border-cyan-400/40 bg-cyan-500/10 py-2.5 text-xs font-bold text-cyan-300"
+                className="flex items-center justify-center gap-1.5 rounded-xl border border-cyan-400/50 bg-cyan-500/20 py-2.5 text-xs font-bold text-cyan-300 shadow-[0_0_12px_rgba(34,211,238,0.2)]"
               >
                 <Code2 className="h-3.5 w-3.5" />
-                <span>B.Tech Resume</span>
+                <span>B.Tech Resume (01)</span>
               </a>
               <a
                 href="/BBA-Resume.pdf"
                 target="_blank"
                 rel="noreferrer"
-                className="flex items-center justify-center gap-1.5 rounded-xl border border-teal-400/40 bg-teal-500/10 py-2.5 text-xs font-bold text-teal-300"
+                className="flex items-center justify-center gap-1.5 rounded-xl border border-white/10 bg-slate-900 py-2.5 text-xs font-semibold text-slate-300"
               >
                 <Sparkles className="h-3.5 w-3.5" />
-                <span>BBA Resume</span>
+                <span>BBA Resume (02)</span>
               </a>
             </div>
 
-            <div className="mt-4 flex items-center justify-around pt-2">
+            <div className="mt-4 flex items-center justify-around pt-3 border-t border-white/10">
               <a
                 href="https://github.com/BODARITHWIK"
                 target="_blank"
                 rel="noreferrer"
-                className="flex items-center gap-2 text-xs font-semibold text-slate-300 hover:text-cyan-300"
+                className="flex items-center gap-2 text-xs font-bold text-slate-300 hover:text-cyan-300"
               >
-                <Github className="h-4 w-4" />
-                <span>GitHub Profile</span>
+                <Github className="h-4 w-4 text-cyan-400" />
+                <span>GitHub</span>
               </a>
               <a
                 href="https://www.linkedin.com/in/rithwik-boda-89b744316/"
                 target="_blank"
                 rel="noreferrer"
-                className="flex items-center gap-2 text-xs font-semibold text-slate-300 hover:text-cyan-300"
+                className="flex items-center gap-2 text-xs font-bold text-slate-300 hover:text-cyan-300"
               >
-                <Linkedin className="h-4 w-4" />
-                <span>LinkedIn Profile</span>
+                <Linkedin className="h-4 w-4 text-cyan-400" />
+                <span>LinkedIn</span>
               </a>
             </div>
           </motion.div>

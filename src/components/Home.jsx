@@ -8,288 +8,309 @@ import {
   Sparkles,
   ChevronDown,
   Code2,
-  Award,
-  User,
+  Terminal,
+  Cloud,
+  Cpu,
+  Layers,
+  CheckCircle2,
+  Server,
   ShieldCheck,
+  User,
+  Download,
+  Mail
 } from "lucide-react";
 
 function Home() {
-  const [heroView, setHeroView] = useState("portrait"); // "portrait" | "emblem"
+  const [activeTab, setActiveTab] = useState("portrait"); // "portrait" | "terminal" | "emblem"
 
-  const techStackBadges = [
-    "React.js",
-    "Java / Spring Boot",
-    "Docker & K8s",
+  const badges = [
+    "B.Tech CS",
+    "Cloud Native",
+    "DevOps",
+    "Full Stack",
     "AWS",
-    "Terraform",
-    "CI/CD Pipelines",
-    "Microservices",
+    "Docker",
+    "Kubernetes",
+    "Spring Boot",
+    "React",
+    "CI/CD"
   ];
 
-  // Editorial Reveal Variants
-  const containerVariants = {
-    hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: {
-        staggerChildren: 0.15,
-        delayChildren: 0.1,
-      },
-    },
-  };
-
-  const textItemVariants = {
-    hidden: { opacity: 0, y: 35 },
-    visible: {
-      opacity: 1,
-      y: 0,
-      transition: { duration: 0.7, ease: [0.22, 1, 0.36, 1] },
-    },
-  };
-
-  const imageVariants = {
-    hidden: { opacity: 0, scale: 0.92, y: 40 },
-    visible: {
-      opacity: 1,
-      scale: 1,
-      y: 0,
-      transition: { duration: 0.9, delay: 0.3, ease: [0.22, 1, 0.36, 1] },
-    },
-  };
+  const codeSnippet = `// Boda Rithwik - Cloud Native Engineer
+const engineer = {
+  name: "BODA RITHWIK",
+  degree: "B.Tech Computer Science (CGPA: 8.51)",
+  specialization: "Cloud Native & DevOps",
+  cloud: ["AWS", "Kubernetes", "Docker"],
+  backend: ["Java", "Spring Boot", "REST APIs"],
+  frontend: ["React.js", "TypeScript", "Vite"],
+  status: "Available for Hire 🚀"
+};`;
 
   return (
     <section
       id="home"
-      className="relative flex min-h-screen flex-col items-center justify-between overflow-hidden pt-28 pb-12 lg:pt-36 lg:pb-16"
+      className="relative flex min-h-screen flex-col items-center justify-center overflow-hidden pt-28 pb-16 lg:pt-36 lg:pb-24 bg-[#070d19]"
     >
-      {/* Background Mesh Glows */}
-      <div className="absolute inset-0 -z-10 bg-grid-pattern opacity-20" />
-      <div className="pointer-events-none absolute -top-40 left-1/2 -z-10 h-[650px] w-[650px] -translate-x-1/2 rounded-full bg-cyan-500/15 blur-[150px] animate-pulse-glow" />
-      <div className="pointer-events-none absolute top-1/3 right-10 -z-10 h-[500px] w-[500px] rounded-full bg-indigo-600/15 blur-[140px]" />
-      <div className="pointer-events-none absolute bottom-10 left-10 -z-10 h-[450px] w-[450px] rounded-full bg-purple-600/10 blur-[130px]" />
+      {/* Background Mesh Glows & Grid Pattern */}
+      <div className="absolute inset-0 bg-grid-pattern opacity-20" />
+      <div className="pointer-events-none absolute -top-40 left-1/2 -z-10 h-[600px] w-[600px] -translate-x-1/2 rounded-full bg-cyan-500/15 blur-[160px] animate-pulse-glow" />
+      <div className="pointer-events-none absolute top-1/4 right-0 -z-10 h-[500px] w-[500px] rounded-full bg-indigo-600/15 blur-[150px]" />
+      <div className="pointer-events-none absolute bottom-0 left-0 -z-10 h-[450px] w-[450px] rounded-full bg-teal-500/10 blur-[140px]" />
 
-      <div className="mx-auto grid w-full max-w-7xl gap-10 px-4 sm:px-6 lg:grid-cols-[1.15fr_0.85fr] lg:items-center lg:px-8">
-        {/* Left Hero Editorial Content */}
+      <div className="mx-auto grid w-full max-w-7xl gap-12 px-4 sm:px-6 lg:grid-cols-12 lg:items-center lg:px-8">
+        
+        {/* LEFT COLUMN: HERO ESSENTIAL CONTENT (Spans 7 columns on desktop) */}
         <motion.div
-          variants={containerVariants}
-          initial="hidden"
-          animate="visible"
-          className="space-y-6 sm:space-y-8"
+          initial={{ opacity: 0, x: -30 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
+          className="lg:col-span-7 space-y-6 text-left"
         >
           {/* Status Badge */}
-          <motion.div variants={textItemVariants} className="inline-block">
-            <div className="inline-flex items-center gap-2.5 rounded-full border border-cyan-400/40 bg-slate-900/80 px-4 py-1.5 backdrop-blur-xl shadow-[0_0_20px_rgba(34,211,238,0.2)]">
-              <span className="relative flex h-2.5 w-2.5">
-                <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-cyan-400 opacity-75"></span>
-                <span className="relative inline-flex h-2.5 w-2.5 rounded-full bg-cyan-400"></span>
-              </span>
-              <span className="text-xs font-bold uppercase tracking-widest text-cyan-300 font-mono">
-                Available for Opportunities
-              </span>
-            </div>
-          </motion.div>
+          <div className="inline-flex items-center gap-2.5 rounded-full border border-cyan-400/40 bg-slate-900/90 px-4 py-1.5 backdrop-blur-xl shadow-[0_0_20px_rgba(34,211,238,0.2)]">
+            <span className="relative flex h-2.5 w-2.5">
+              <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-cyan-400 opacity-75"></span>
+              <span className="relative inline-flex h-2.5 w-2.5 rounded-full bg-cyan-400"></span>
+            </span>
+            <span className="text-xs font-bold uppercase tracking-widest text-cyan-300 font-mono">
+              B.Tech Computer Science • KL University
+            </span>
+          </div>
 
-          {/* Large Editorial Headline Display with Fluid Typography */}
-          <motion.div variants={textItemVariants} className="space-y-3 sm:space-y-4">
-            <div className="text-xs font-bold uppercase tracking-widest text-cyan-400/90 font-mono">
-              // HELLO, I'M
-            </div>
-            <h1 className="text-[clamp(2.3rem,8vw,6.5rem)] font-black tracking-normal text-white font-outfit uppercase leading-[0.98] flex flex-wrap items-center gap-x-3 sm:gap-x-5">
-              <span>BODA</span>
-              <span className="bg-gradient-to-r from-white via-cyan-100 to-cyan-400 bg-clip-text text-transparent drop-shadow-[0_0_40px_rgba(34,211,238,0.4)]">
+          {/* Main Heading */}
+          <div className="space-y-2">
+            <h2 className="text-sm sm:text-base font-extrabold uppercase tracking-widest text-cyan-400 font-mono">
+              Hi, I'm
+            </h2>
+            <h1 className="text-4xl sm:text-6xl lg:text-7xl font-black tracking-tight text-white uppercase leading-[1.02] font-outfit">
+              BODA{" "}
+              <span className="bg-gradient-to-r from-white via-cyan-100 to-cyan-400 bg-clip-text text-transparent drop-shadow-[0_0_35px_rgba(34,211,238,0.4)]">
                 RITHWIK
               </span>
             </h1>
-            <h2 className="text-base sm:text-xl lg:text-2xl font-bold tracking-tight text-cyan-300 font-outfit">
-              Cloud-Native Software Engineer <span className="text-slate-500">|</span> Full-Stack Developer
-            </h2>
-            <p className="max-w-2xl text-sm leading-relaxed text-slate-300 sm:text-lg">
-              B.Tech CSIT (Computer Science & Information Technology) (<span className="text-cyan-300 font-semibold">CGPA: 8.51</span>) + BBA dual-degree (<span className="text-cyan-300 font-semibold">CGPA: 8.68</span>) undergraduate at KL University.
-              Specializing in full stack development, containerized microservices architectures, and cloud engineering.
-            </p>
+            <h3 className="text-lg sm:text-2xl font-bold text-cyan-300 font-outfit pt-1">
+              B.Tech Computer Science Student <span className="text-slate-500">|</span> Cloud Native Software Engineering
+            </h3>
+          </div>
 
-            {/* 3 Key Bullet Dot Points */}
-            <ul className="space-y-2.5 pt-2 text-sm text-slate-200">
-              <li className="flex items-start gap-2.5">
-                <span className="mt-1.5 flex h-2 w-2 shrink-0 rounded-full bg-cyan-400 shadow-[0_0_8px_rgba(34,211,238,0.9)]" />
-                <span>
-                  <strong className="text-white font-semibold">B.Tech CSIT (Computer Science & Info Tech)</strong> — First Priority Degree (<span className="text-cyan-300 font-bold">CGPA: 8.51 / 10.0</span>)
-                </span>
-              </li>
-              <li className="flex items-start gap-2.5">
-                <span className="mt-1.5 flex h-2 w-2 shrink-0 rounded-full bg-cyan-400 shadow-[0_0_8px_rgba(34,211,238,0.9)]" />
-                <span>
-                  <strong className="text-white font-semibold">BBA Dual Degree (Business Administration)</strong> — Second Priority Degree (<span className="text-cyan-300 font-bold">CGPA: 8.68 / 10.0</span>)
-                </span>
-              </li>
-              <li className="flex items-start gap-2.5">
-                <span className="mt-1.5 flex h-2 w-2 shrink-0 rounded-full bg-cyan-400 shadow-[0_0_8px_rgba(34,211,238,0.9)]" />
-                <span>
-                  <strong className="text-white font-semibold">Full-Stack & Cloud Engineering</strong> — React.js, Spring Boot, Microservices, AWS, Docker & Kubernetes
-                </span>
-              </li>
-            </ul>
-          </motion.div>
+          {/* Supporting Text */}
+          <p className="text-base sm:text-lg leading-relaxed text-slate-300 max-w-2xl">
+            Building scalable software, cloud-native applications, and modern DevOps solutions.
+          </p>
 
-          {/* Action Buttons (Touch friendly & Mobile responsive) */}
-          <motion.div variants={textItemVariants} className="flex flex-col sm:flex-row sm:items-center gap-3.5 pt-2 w-full">
+          {/* Quick Technical Highlights */}
+          <div className="grid grid-cols-2 gap-3 pt-2 max-w-xl">
+            <div className="flex items-center gap-2.5 rounded-2xl border border-cyan-400/25 bg-slate-900/70 p-3 backdrop-blur-md">
+              <div className="flex h-8 w-8 items-center justify-center rounded-xl bg-cyan-500/20 text-cyan-300">
+                <Code2 className="h-4 w-4" />
+              </div>
+              <div>
+                <div className="text-xs font-bold text-white">B.Tech CSIT</div>
+                <div className="text-[11px] text-cyan-300 font-mono font-semibold">Primary • CGPA: 8.51</div>
+              </div>
+            </div>
+            <div className="flex items-center gap-2.5 rounded-2xl border border-white/10 bg-slate-900/70 p-3 backdrop-blur-md">
+              <div className="flex h-8 w-8 items-center justify-center rounded-xl bg-indigo-500/20 text-indigo-300">
+                <Cloud className="h-4 w-4" />
+              </div>
+              <div>
+                <div className="text-xs font-bold text-white">Cloud & DevOps</div>
+                <div className="text-[11px] text-slate-300 font-mono font-semibold">AWS • K8s • Docker</div>
+              </div>
+            </div>
+          </div>
+
+          {/* Badges Stack */}
+          <div className="flex flex-wrap gap-2 pt-2">
+            {badges.map((badge) => (
+              <span
+                key={badge}
+                className="rounded-xl border border-white/10 bg-slate-900/80 px-3 py-1.5 text-xs font-semibold text-slate-200 backdrop-blur-md transition-all duration-200 hover:border-cyan-400/40 hover:bg-slate-900 hover:text-cyan-300"
+              >
+                {badge}
+              </span>
+            ))}
+          </div>
+
+          {/* Call-To-Action Buttons */}
+          <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3.5 pt-4">
             <a
               href="#projects"
               onClick={(e) => {
                 e.preventDefault();
-                document
-                  .getElementById("projects")
-                  ?.scrollIntoView({ behavior: "smooth" });
+                document.getElementById("projects")?.scrollIntoView({ behavior: "smooth" });
               }}
-              className="group relative inline-flex w-full sm:w-auto items-center justify-center gap-2.5 rounded-xl bg-gradient-to-r from-cyan-400 to-cyan-300 px-6 py-3.5 text-sm font-bold text-slate-950 shadow-[0_0_25px_rgba(34,211,238,0.4)] transition-all duration-300 hover:from-cyan-300 hover:to-cyan-200 hover:shadow-[0_0_35px_rgba(34,211,238,0.6)] hover:scale-[1.02] min-h-[48px]"
+              className="group relative inline-flex items-center justify-center gap-2.5 rounded-2xl bg-gradient-to-r from-cyan-400 to-teal-400 px-7 py-3.5 text-sm font-black text-slate-950 shadow-[0_0_25px_rgba(34,211,238,0.4)] transition-all duration-300 hover:from-cyan-300 hover:to-teal-300 hover:shadow-[0_0_35px_rgba(34,211,238,0.6)] hover:scale-[1.02] min-h-[48px]"
             >
-              <span>Explore Projects</span>
+              <span>View My Projects</span>
               <ArrowRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1.5" />
             </a>
 
             <a
-              href="#resumes"
-              onClick={(e) => {
-                e.preventDefault();
-                document
-                  .getElementById("resumes")
-                  ?.scrollIntoView({ behavior: "smooth" });
-              }}
-              className="inline-flex w-full sm:w-auto items-center justify-center gap-2.5 rounded-xl border border-white/15 bg-slate-900/80 px-6 py-3.5 text-sm font-semibold text-white backdrop-blur-xl transition-all duration-300 hover:border-cyan-400/50 hover:bg-slate-800/90 hover:shadow-[0_0_20px_rgba(34,211,238,0.2)] min-h-[48px]"
+              href="/B.Tech-Resume.pdf"
+              target="_blank"
+              rel="noreferrer"
+              className="inline-flex items-center justify-center gap-2.5 rounded-2xl border border-cyan-400/50 bg-slate-900/90 px-6 py-3.5 text-sm font-bold text-cyan-300 backdrop-blur-xl transition-all duration-300 hover:border-cyan-400 hover:bg-cyan-500/20 hover:shadow-[0_0_20px_rgba(34,211,238,0.3)] min-h-[48px]"
             >
-              <FileText className="h-4 w-4 text-cyan-400" />
-              <span>Explore Resumes</span>
+              <Download className="h-4 w-4 text-cyan-400" />
+              <span>Download B.Tech Resume</span>
             </a>
 
-            {/* Social Icons */}
-            <div className="flex items-center gap-3 justify-center sm:justify-start pt-1 sm:pt-0 sm:pl-2">
-              <a
-                href="https://github.com/BODARITHWIK"
-                target="_blank"
-                rel="noreferrer"
-                aria-label="GitHub Profile"
-                className="flex h-11 w-11 items-center justify-center rounded-xl border border-white/10 bg-slate-900/80 text-slate-300 transition-all duration-300 hover:border-cyan-400/40 hover:bg-slate-800 hover:text-white hover:shadow-[0_0_18px_rgba(34,211,238,0.3)] hover:scale-105"
-              >
-                <Github className="h-5 w-5" />
-              </a>
-              <a
-                href="https://www.linkedin.com/in/rithwik-boda-89b744316/"
-                target="_blank"
-                rel="noreferrer"
-                aria-label="LinkedIn Profile"
-                className="flex h-11 w-11 items-center justify-center rounded-xl border border-white/10 bg-slate-900/80 text-slate-300 transition-all duration-300 hover:border-cyan-400/40 hover:bg-slate-800 hover:text-white hover:shadow-[0_0_18px_rgba(34,211,238,0.3)] hover:scale-105"
-              >
-                <Linkedin className="h-5 w-5" />
-              </a>
-            </div>
-          </motion.div>
+            <a
+              href="#contact"
+              onClick={(e) => {
+                e.preventDefault();
+                document.getElementById("contact")?.scrollIntoView({ behavior: "smooth" });
+              }}
+              className="inline-flex items-center justify-center gap-2.5 rounded-2xl border border-white/15 bg-slate-950/70 px-5 py-3.5 text-sm font-bold text-slate-200 backdrop-blur-xl transition-all duration-300 hover:border-white/30 hover:bg-slate-900 hover:text-white min-h-[48px]"
+            >
+              <Mail className="h-4 w-4 text-slate-400" />
+              <span>Contact Me</span>
+            </a>
+          </div>
 
-          {/* Quick Tech Badges */}
-          <motion.div variants={textItemVariants} className="pt-3 border-t border-white/10">
-            <div className="flex flex-wrap gap-2">
-              {techStackBadges.map((tech) => (
-                <span
-                  key={tech}
-                  className="rounded-lg border border-white/10 bg-slate-900/70 px-3 py-1 text-xs font-semibold text-slate-300 backdrop-blur-md transition-all duration-200 hover:border-cyan-400/40 hover:bg-slate-900 hover:text-cyan-200"
-                >
-                  {tech}
-                </span>
-              ))}
-            </div>
-          </motion.div>
+          {/* Social Links Row */}
+          <div className="flex items-center gap-4 pt-2">
+            <span className="text-xs font-bold uppercase tracking-wider text-slate-400 font-mono">
+              Profiles:
+            </span>
+            <a
+              href="https://github.com/BODARITHWIK"
+              target="_blank"
+              rel="noreferrer"
+              className="flex items-center gap-2 text-xs font-bold text-slate-300 hover:text-cyan-300 transition-colors"
+            >
+              <Github className="h-4 w-4 text-cyan-400" />
+              <span>GitHub</span>
+            </a>
+            <span className="text-slate-600">•</span>
+            <a
+              href="https://www.linkedin.com/in/rithwik-boda-89b744316/"
+              target="_blank"
+              rel="noreferrer"
+              className="flex items-center gap-2 text-xs font-bold text-slate-300 hover:text-cyan-300 transition-colors"
+            >
+              <Linkedin className="h-4 w-4 text-cyan-400" />
+              <span>LinkedIn</span>
+            </a>
+          </div>
         </motion.div>
 
-        {/* Right Hero Editorial Frame with Emblem & Portrait Toggle */}
+        {/* RIGHT COLUMN: MODERN SPLIT DASHBOARD CARD (Spans 5 columns on desktop) */}
         <motion.div
-          variants={imageVariants}
-          initial="hidden"
-          animate="visible"
-          className="relative flex flex-col items-center justify-center w-full"
+          initial={{ opacity: 0, scale: 0.94 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 0.8, delay: 0.2, ease: [0.22, 1, 0.36, 1] }}
+          className="lg:col-span-5 flex flex-col items-center justify-center w-full"
         >
-          {/* Interactive View Toggle */}
-          <div className="flex items-center justify-center gap-2 mb-4 z-10">
+          {/* Card View Switcher */}
+          <div className="flex items-center justify-center gap-2 mb-4 z-10 bg-slate-900/90 p-1.5 rounded-full border border-white/10 backdrop-blur-xl">
             <button
-              onClick={() => setHeroView("portrait")}
+              onClick={() => setActiveTab("portrait")}
               className={`flex items-center gap-2 rounded-full px-4 py-1.5 text-xs font-bold transition-all duration-300 ${
-                heroView === "portrait"
-                  ? "bg-cyan-500/20 text-cyan-300 border border-cyan-400/60 shadow-[0_0_15px_rgba(34,211,238,0.3)] scale-105"
-                  : "bg-slate-900/80 text-slate-400 border border-white/10 hover:text-white"
+                activeTab === "portrait"
+                  ? "bg-cyan-500/20 text-cyan-300 border border-cyan-400/60 shadow-[0_0_15px_rgba(34,211,238,0.3)]"
+                  : "text-slate-400 hover:text-white"
               }`}
             >
               <User className="h-3.5 w-3.5" />
-              <span>Portrait Photo</span>
+              <span>Portrait</span>
             </button>
+
             <button
-              onClick={() => setHeroView("emblem")}
+              onClick={() => setActiveTab("terminal")}
               className={`flex items-center gap-2 rounded-full px-4 py-1.5 text-xs font-bold transition-all duration-300 ${
-                heroView === "emblem"
-                  ? "bg-amber-500/25 text-amber-300 border border-amber-400/70 shadow-[0_0_20px_rgba(245,158,11,0.4)] scale-105"
-                  : "bg-slate-900/80 text-slate-400 border border-white/10 hover:text-white"
+                activeTab === "terminal"
+                  ? "bg-teal-500/20 text-teal-300 border border-teal-400/60 shadow-[0_0_15px_rgba(20,184,166,0.3)]"
+                  : "text-slate-400 hover:text-white"
+              }`}
+            >
+              <Terminal className="h-3.5 w-3.5" />
+              <span>Code Spec</span>
+            </button>
+
+            <button
+              onClick={() => setActiveTab("emblem")}
+              className={`flex items-center gap-2 rounded-full px-4 py-1.5 text-xs font-bold transition-all duration-300 ${
+                activeTab === "emblem"
+                  ? "bg-amber-500/20 text-amber-300 border border-amber-400/60 shadow-[0_0_15px_rgba(245,158,11,0.3)]"
+                  : "text-slate-400 hover:text-white"
               }`}
             >
               <Sparkles className="h-3.5 w-3.5 text-amber-400" />
-              <span>Official Brand Emblem</span>
+              <span>Brand Logo</span>
             </button>
           </div>
 
-          {/* Glowing Backlight Circle */}
-          <div className="absolute inset-0 rounded-full bg-gradient-to-tr from-cyan-500/30 via-amber-500/20 to-purple-500/30 blur-3xl animate-pulse-glow" />
-
-          {/* Editorial Image Container */}
-          <div className="relative w-full max-w-sm sm:max-w-md rounded-3xl border border-cyan-400/30 bg-slate-900/80 p-3 sm:p-4 shadow-[0_0_50px_rgba(34,211,238,0.15)] backdrop-blur-2xl transition-all duration-500 hover:border-cyan-400/60 hover:shadow-[0_0_60px_rgba(34,211,238,0.25)]">
+          {/* Main Visual Frame */}
+          <div className="relative w-full max-w-md rounded-3xl border border-cyan-400/30 bg-slate-900/85 p-4 shadow-[0_0_50px_rgba(34,211,238,0.15)] backdrop-blur-2xl transition-all duration-500 hover:border-cyan-400/60 hover:shadow-[0_0_60px_rgba(34,211,238,0.25)]">
             
-            {/* Always visible Top-Right Emblem Badge */}
-            <div className="absolute top-5 right-5 z-20 flex items-center gap-2 rounded-xl border border-amber-400/60 bg-black/90 px-3 py-1.5 shadow-[0_0_20px_rgba(245,158,11,0.4)] backdrop-blur-md">
-              <img
-                src="/logo.png"
-                alt="BR Emblem Badge"
-                className="h-6 w-6 rounded-md object-contain bg-black p-0.5 border border-amber-400/40"
-              />
-              <span className="text-[10px] font-black tracking-widest text-amber-300 uppercase font-mono">
-                BR Monogram
-              </span>
-            </div>
-
-            {heroView === "portrait" ? (
+            {activeTab === "portrait" && (
               <div className="relative overflow-hidden rounded-2xl border border-white/10 group">
                 <img
                   src="/profile.jpg"
-                  alt="Boda Rithwik - Professional Portrait"
-                  className="h-[360px] sm:h-[480px] w-full object-cover object-top transition-transform duration-700 group-hover:scale-105"
+                  alt="Boda Rithwik - B.Tech CS Student"
+                  className="h-[380px] sm:h-[460px] w-full object-cover object-top transition-transform duration-700 group-hover:scale-105"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/20 to-transparent opacity-75" />
+                <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/20 to-transparent opacity-80" />
 
-                {/* Floating Overlay Badge */}
-                <div className="absolute bottom-3 left-3 right-3 sm:bottom-4 sm:left-4 sm:right-4 rounded-xl border border-white/15 bg-slate-950/85 p-3 sm:p-3.5 backdrop-blur-xl shadow-xl">
+                {/* Floating Info Overlay Card */}
+                <div className="absolute bottom-4 left-4 right-4 rounded-2xl border border-cyan-400/40 bg-slate-950/90 p-4 backdrop-blur-xl shadow-2xl">
                   <div className="flex items-center justify-between">
                     <div>
                       <div className="text-xs font-bold text-white flex items-center gap-1.5">
-                        <Sparkles className="h-3.5 w-3.5 text-cyan-400" />
+                        <Sparkles className="h-4 w-4 text-cyan-400" />
                         <span>KL University</span>
                       </div>
-                      <div className="text-[10px] sm:text-[11px] font-semibold text-cyan-300 mt-0.5 font-mono">
-                        B.Tech CSIT (CGPA: 8.51) + BBA (CGPA: 8.68)
+                      <div className="text-xs font-semibold text-cyan-300 mt-1 font-mono">
+                        B.Tech CSIT (CGPA: 8.51) • PRIMARY
                       </div>
-                    </div>
-                    <div className="flex h-7 w-7 sm:h-8 sm:w-8 items-center justify-center rounded-lg border border-cyan-400/30 bg-cyan-500/20 text-cyan-300">
-                      <Award className="h-3.5 w-3.5 sm:h-4 sm:w-4" />
+                      <div className="text-[11px] text-slate-400 font-sans mt-0.5">
+                        Dual Degree BBA (CGPA: 8.68)
+                      </div>
                     </div>
                   </div>
                 </div>
               </div>
-            ) : (
-              <div className="relative overflow-hidden rounded-2xl border border-amber-400/40 bg-black p-4 flex flex-col items-center justify-center group shadow-2xl">
+            )}
+
+            {activeTab === "terminal" && (
+              <div className="rounded-2xl border border-cyan-400/30 bg-[#040812] p-5 shadow-2xl font-mono text-xs text-slate-200 h-[380px] sm:h-[460px] flex flex-col justify-between overflow-x-auto">
+                <div className="flex items-center justify-between border-b border-white/10 pb-3 mb-3">
+                  <div className="flex items-center gap-2">
+                    <span className="h-3 w-3 rounded-full bg-rose-500/80 inline-block" />
+                    <span className="h-3 w-3 rounded-full bg-amber-500/80 inline-block" />
+                    <span className="h-3 w-3 rounded-full bg-emerald-500/80 inline-block" />
+                    <span className="text-[11px] text-slate-400 ml-2">rithwik-cloud-engineer.ts</span>
+                  </div>
+                  <span className="text-[10px] text-cyan-400 font-bold">TypeScript</span>
+                </div>
+                <pre className="text-cyan-300 font-mono text-[11px] sm:text-xs leading-relaxed whitespace-pre-wrap overflow-y-auto">
+                  {codeSnippet}
+                </pre>
+                <div className="mt-4 pt-3 border-t border-white/10 flex items-center justify-between text-[11px] text-slate-400">
+                  <span className="flex items-center gap-1 text-emerald-400 font-bold">
+                    <CheckCircle2 className="h-3.5 w-3.5" /> Ready for Production
+                  </span>
+                  <span>B.Tech Priority #1</span>
+                </div>
+              </div>
+            )}
+
+            {activeTab === "emblem" && (
+              <div className="relative overflow-hidden rounded-2xl border border-amber-400/40 bg-black p-6 flex flex-col items-center justify-center group h-[380px] sm:h-[460px] shadow-2xl">
                 <img
                   src="/logo.png"
-                  alt="Boda Rithwik - Official Brand Emblem"
-                  className="h-[340px] sm:h-[440px] w-full object-contain transition-transform duration-700 group-hover:scale-105 filter drop-shadow-[0_0_30px_rgba(245,158,11,0.3)]"
+                  alt="Boda Rithwik - Brand Logo Emblem"
+                  className="h-[300px] w-full object-contain filter drop-shadow-[0_0_30px_rgba(245,158,11,0.4)] transition-transform duration-700 group-hover:scale-105"
                 />
-                <div className="w-full mt-2 rounded-xl border border-amber-400/30 bg-slate-950/90 p-3 text-center backdrop-blur-xl">
+                <div className="w-full mt-4 rounded-xl border border-amber-400/30 bg-slate-950/90 p-3 text-center backdrop-blur-xl">
                   <div className="text-xs font-black tracking-widest text-amber-300 uppercase font-outfit">
                     BODA RITHWIK
                   </div>
-                  <div className="text-[10px] font-medium text-slate-300 font-mono mt-0.5">
-                    Official Gold & Silver Personal Emblem
+                  <div className="text-[10px] font-semibold text-slate-300 font-mono mt-0.5">
+                    Official Personal Brand Monogram
                   </div>
                 </div>
               </div>
@@ -298,23 +319,23 @@ function Home() {
         </motion.div>
       </div>
 
-      {/* Scroll to Explore Indicator */}
+      {/* Scroll Down Indicator */}
       <motion.div
         initial={{ opacity: 0, y: 15 }}
         animate={{ opacity: 1, y: 0 }}
-        transition={{ delay: 1, duration: 0.6 }}
-        className="mt-8 sm:mt-12 flex flex-col items-center gap-2 cursor-pointer"
+        transition={{ delay: 0.8, duration: 0.6 }}
+        className="mt-12 flex flex-col items-center gap-2 cursor-pointer"
         onClick={() => {
-          document.getElementById("resumes")?.scrollIntoView({ behavior: "smooth" });
+          document.getElementById("about")?.scrollIntoView({ behavior: "smooth" });
         }}
       >
         <span className="text-[10px] font-bold uppercase tracking-widest text-slate-400 font-mono">
-          Scroll to Explore
+          Explore Portfolio
         </span>
         <motion.div
           animate={{ y: [0, 6, 0] }}
           transition={{ repeat: Infinity, duration: 1.8, ease: "easeInOut" }}
-          className="flex h-8 w-8 items-center justify-center rounded-full border border-cyan-400/30 bg-cyan-500/10 text-cyan-300 shadow-[0_0_10px_rgba(34,211,238,0.2)]"
+          className="flex h-8 w-8 items-center justify-center rounded-full border border-cyan-400/40 bg-cyan-500/10 text-cyan-300 shadow-[0_0_12px_rgba(34,211,238,0.2)]"
         >
           <ChevronDown className="h-4 w-4" />
         </motion.div>

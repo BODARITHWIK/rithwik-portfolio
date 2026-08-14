@@ -1,123 +1,121 @@
-import { ArrowUp, Github, Linkedin, Mail, Code2 } from "lucide-react";
+import { Github, Linkedin, Mail, ArrowUp, Code2, Heart, Sparkles } from "lucide-react";
 
 function Footer() {
   const scrollToTop = () => {
     window.scrollTo({ top: 0, behavior: "smooth" });
   };
 
-  const navLinks = [
-    { name: "Home", href: "#home" },
-    { name: "Resumes", href: "#resumes" },
-    { name: "About", href: "#about" },
-    { name: "Skills", href: "#skills" },
-    { name: "Projects", href: "#projects" },
-    { name: "Education", href: "#education" },
-    { name: "Certifications", href: "#certificates" },
-    { name: "Contact", href: "#contact" },
-  ];
-
   return (
-    <footer className="relative border-t border-white/10 bg-slate-950 pt-16 pb-8 text-slate-400">
+    <footer className="relative border-t border-cyan-500/20 bg-[#040812] pt-16 pb-12 text-slate-400">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div className="grid gap-10 md:grid-cols-3 items-start justify-between">
-          {/* Brand Col */}
-          <div className="space-y-4">
-            <div className="flex items-center gap-3.5">
+        
+        <div className="grid gap-10 md:grid-cols-12 pb-12 border-b border-white/10">
+          
+          {/* Brand Info (Spans 6 cols) */}
+          <div className="md:col-span-6 space-y-4">
+            <div className="flex items-center gap-3">
               <img
                 src="/logo.png"
-                alt="Boda Rithwik Logo"
-                className="h-12 w-12 rounded-2xl object-contain border border-amber-400/60 bg-black p-1 shadow-[0_0_20px_rgba(245,158,11,0.4)] transition-transform duration-300 hover:scale-105"
+                alt="Boda Rithwik Personal Logo"
+                className="h-10 w-10 rounded-xl object-contain border border-amber-400/50 bg-black p-0.5"
               />
               <div>
-                <span className="text-xl font-black tracking-wider text-white font-outfit uppercase block leading-tight">
-                  Boda Rithwik<span className="text-cyan-400">.</span>
-                </span>
-                <span className="text-xs font-bold text-amber-400/90 font-mono tracking-wider uppercase">
-                  Personal Brand & Monogram
-                </span>
+                <h3 className="text-xl font-extrabold tracking-wider text-white font-outfit uppercase">
+                  BODA RITHWIK
+                </h3>
+                <p className="text-xs font-bold text-cyan-300 font-mono">
+                  B.Tech Computer Science Student • Cloud Native Engineering
+                </p>
               </div>
             </div>
-            <p className="text-sm leading-relaxed text-slate-300 max-w-sm">
-              Cloud-Native Software Engineer | Full-Stack Developer specializing in scalable microservices architectures, Kubernetes, AWS, and DevOps automation.
+            <p className="text-xs sm:text-sm leading-relaxed text-slate-300 max-w-md">
+              Specializing in cloud-native software development, containerized microservices architectures, AWS infrastructure, and modern DevOps solutions.
             </p>
-            <div className="flex items-center gap-2.5 pt-2">
+          </div>
+
+          {/* Quick Links (3 cols) */}
+          <div className="md:col-span-3 space-y-3">
+            <div className="text-xs font-bold uppercase tracking-wider text-white font-mono">
+              Quick Navigation
+            </div>
+            <ul className="space-y-2 text-xs font-semibold">
+              <li>
+                <a href="#about" className="hover:text-cyan-300 transition-colors">About Me</a>
+              </li>
+              <li>
+                <a href="#education" className="hover:text-cyan-300 transition-colors">Education (B.Tech Primary)</a>
+              </li>
+              <li>
+                <a href="#skills" className="hover:text-cyan-300 transition-colors">Skills & Tech Stack</a>
+              </li>
+              <li>
+                <a href="#projects" className="hover:text-cyan-300 transition-colors">Featured Projects</a>
+              </li>
+              <li>
+                <a href="#certificates" className="hover:text-cyan-300 transition-colors">Certifications</a>
+              </li>
+              <li>
+                <a href="#resumes" className="hover:text-cyan-300 transition-colors">Download Resumes</a>
+              </li>
+            </ul>
+          </div>
+
+          {/* Connect & Social (3 cols) */}
+          <div className="md:col-span-3 space-y-3">
+            <div className="text-xs font-bold uppercase tracking-wider text-white font-mono">
+              Connect
+            </div>
+            <div className="space-y-2 text-xs font-semibold">
               <a
                 href="https://github.com/BODARITHWIK"
                 target="_blank"
                 rel="noreferrer"
-                aria-label="GitHub Profile"
-                className="flex h-9 w-9 items-center justify-center rounded-xl border border-white/10 bg-slate-900 text-slate-300 transition-all duration-300 hover:border-cyan-400/50 hover:bg-slate-800 hover:text-white hover:shadow-[0_0_12px_rgba(34,211,238,0.2)]"
+                className="flex items-center gap-2 text-slate-300 hover:text-cyan-300 transition-colors"
               >
-                <Github className="h-4 w-4" />
+                <Github className="h-4 w-4 text-cyan-400" />
+                <span>GitHub</span>
               </a>
               <a
                 href="https://www.linkedin.com/in/rithwik-boda-89b744316/"
                 target="_blank"
                 rel="noreferrer"
-                aria-label="LinkedIn Profile"
-                className="flex h-9 w-9 items-center justify-center rounded-xl border border-white/10 bg-slate-900 text-slate-300 transition-all duration-300 hover:border-cyan-400/50 hover:bg-slate-800 hover:text-white hover:shadow-[0_0_12px_rgba(34,211,238,0.2)]"
+                className="flex items-center gap-2 text-slate-300 hover:text-cyan-300 transition-colors"
               >
-                <Linkedin className="h-4 w-4" />
+                <Linkedin className="h-4 w-4 text-cyan-400" />
+                <span>LinkedIn</span>
               </a>
               <a
                 href="mailto:bodarithwik416@gmail.com"
-                aria-label="Email"
-                className="flex h-9 w-9 items-center justify-center rounded-xl border border-white/10 bg-slate-900 text-slate-300 transition-all duration-300 hover:border-cyan-400/50 hover:bg-slate-800 hover:text-white hover:shadow-[0_0_12px_rgba(34,211,238,0.2)]"
+                className="flex items-center gap-2 text-slate-300 hover:text-cyan-300 transition-colors"
               >
-                <Mail className="h-4 w-4" />
+                <Mail className="h-4 w-4 text-cyan-400" />
+                <span>bodarithwik416@gmail.com</span>
               </a>
             </div>
           </div>
 
-          {/* Quick Links */}
+        </div>
+
+        {/* Bottom Bar & Back to Top */}
+        <div className="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs font-semibold text-slate-400">
           <div>
-            <h3 className="text-xs font-bold uppercase tracking-wider text-slate-200 mb-4 font-mono">
-              Quick Navigation
-            </h3>
-            <ul className="grid grid-cols-2 gap-2 text-sm font-medium">
-              {navLinks.map((link) => (
-                <li key={link.name}>
-                  <a
-                    href={link.href}
-                    onClick={(e) => {
-                      e.preventDefault();
-                      document
-                        .getElementById(link.href.substring(1))
-                        ?.scrollIntoView({ behavior: "smooth" });
-                    }}
-                    className="text-slate-400 transition-colors duration-200 hover:text-cyan-300"
-                  >
-                    {link.name}
-                  </a>
-                </li>
-              ))}
-            </ul>
+            © {new Date().getFullYear()} <strong className="text-white">Boda Rithwik</strong>. All Rights Reserved.
           </div>
 
-          {/* Scroll to top action */}
-          <div className="flex flex-col md:items-end justify-between space-y-4">
-            <div>
-              <p className="text-xs font-bold uppercase tracking-wider text-slate-200 mb-1 font-mono">
-                Based In
-              </p>
-              <p className="text-sm font-semibold text-slate-300">
-                Andhra Pradesh, India
-              </p>
-            </div>
+          <div className="flex items-center gap-4">
+            <span className="text-[11px] font-mono text-cyan-300">
+              B.Tech CSIT (CGPA: 8.51) • KL University
+            </span>
             <button
               onClick={scrollToTop}
-              className="inline-flex items-center gap-2 rounded-xl border border-white/10 bg-slate-900 px-4 py-2.5 text-xs font-bold text-slate-200 transition-all duration-300 hover:border-cyan-400/50 hover:bg-slate-800 hover:text-white hover:shadow-[0_0_15px_rgba(34,211,238,0.2)]"
+              aria-label="Back to Top"
+              className="flex h-9 w-9 items-center justify-center rounded-xl border border-white/10 bg-slate-900 text-slate-300 transition-all duration-300 hover:border-cyan-400/40 hover:bg-cyan-500/20 hover:text-cyan-300"
             >
-              <span>Back to Top</span>
-              <ArrowUp className="h-4 w-4 text-cyan-400" />
+              <ArrowUp className="h-4 w-4" />
             </button>
           </div>
         </div>
 
-        {/* Bottom copyright line */}
-        <div className="mt-12 border-t border-white/10 pt-6 text-center text-xs font-medium text-slate-500 font-mono">
-          <p>© 2026 Boda Rithwik. All rights reserved.</p>
-        </div>
       </div>
     </footer>
   );

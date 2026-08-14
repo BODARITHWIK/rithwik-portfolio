@@ -7,7 +7,7 @@ export default function IntroAnimation({ onComplete }) {
   const [skipped, setSkipped] = useState(false);
 
   const steps = [
-    { title: "BODA RITHWIK", subtitle: "B.Tech Computer Science Student", badge: "PORTFOLIO 2026" },
+    { title: "BODA RITHWIK", subtitle: "B.Tech CSIT Student", badge: "PORTFOLIO 2026" },
     { title: "Software Engineer", subtitle: "Building Scalable Systems & Modern Web Applications", badge: "CAREER FOCUS" },
     { title: "Cloud Native | DevOps | Full Stack", subtitle: "AWS • Kubernetes • Docker • Spring Boot • React", badge: "SPECIALIZATION" },
   ];

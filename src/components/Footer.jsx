@@ -22,7 +22,7 @@ function Footer() {
                   BODA RITHWIK
                 </h3>
                 <p className="text-xs font-bold text-cyan-300 font-mono">
-                  B.Tech Computer Science Student • Cloud Native Engineering
+                  B.Tech CSIT Student • Cloud Native Engineering
                 </p>
               </div>
             </div>

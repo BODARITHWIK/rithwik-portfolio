@@ -70,7 +70,7 @@ const engineer = {
               <span className="relative inline-flex h-2.5 w-2.5 rounded-full bg-cyan-400"></span>
             </span>
             <span className="text-xs font-bold uppercase tracking-widest text-cyan-300 font-mono">
-              B.Tech Computer Science • KL University
+              B.Tech CSIT • KL University
             </span>
           </div>
 
@@ -86,7 +86,7 @@ const engineer = {
               </span>
             </h1>
             <h3 className="text-lg sm:text-2xl font-bold text-cyan-300 font-outfit pt-1">
-              B.Tech Computer Science Student <span className="text-slate-500">|</span> Cloud Native Software Engineering
+              B.Tech CSIT Student <span className="text-slate-500">|</span> Cloud Native Software Engineering
             </h3>
           </div>
 

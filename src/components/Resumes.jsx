@@ -120,38 +120,40 @@ function Resumes() {
             <div>
               {/* Header Badge */}
               <div className="flex items-center justify-between mb-5">
-                <span className="rounded-full border border-slate-700 bg-slate-800/80 px-3.5 py-1 text-xs font-bold text-slate-300 font-mono">
-                  02 — BBA RESUME — SECONDARY
+                <span className="rounded-full border border-purple-400/50 bg-purple-500/20 px-3.5 py-1 text-xs font-bold text-purple-300 font-mono">
+                  02 — BBA RESUME — DUAL DEGREE
                 </span>
-                <div className="flex h-11 w-11 items-center justify-center rounded-2xl border border-white/10 bg-slate-950/80 text-slate-400">
+                <div className="flex h-11 w-11 items-center justify-center rounded-2xl border border-purple-400/30 bg-purple-500/15 text-purple-300">
                   <Briefcase className="h-5 w-5" />
                 </div>
               </div>
 
               {/* Title & Subtitle */}
-              <h3 className="text-xl font-extrabold tracking-tight text-white group-hover:text-cyan-300 transition-colors font-outfit">
+              <h3 className="text-xl font-extrabold tracking-tight text-white group-hover:text-purple-300 transition-colors font-outfit">
                 BBA Business Resume
               </h3>
-              <p className="text-xs font-bold text-slate-400 mt-1 font-mono">
+              <p className="text-xs font-bold text-purple-300 mt-1 font-mono">
                 Bachelor of Business Administration (Dual Degree)
               </p>
 
               {/* Description */}
               <p className="mt-4 text-sm leading-relaxed text-slate-300">
-                Secondary business resume detailing digital marketing strategies, market research capstone, consumer behavior analysis, and project management.
+                Professional business administration resume highlighting strategic management, digital marketing campaigns, business analytics, financial decision-making, and organizational leadership.
               </p>
 
               {/* Pills */}
               <div className="mt-6 flex flex-wrap gap-2">
                 {[
-                  "BBA Dual Degree (CGPA: 8.68)",
-                  "Digital Marketing Research",
-                  "Content Strategy",
-                  "SWOT & ROI Analysis",
+                  "BBA Degree (CGPA: 8.68)",
+                  "Business Administration",
+                  "Digital Marketing Strategy",
+                  "Business Analytics",
+                  "Strategic Leadership",
+                  "Financial Insights",
                 ].map((pill) => (
                   <span
                     key={pill}
-                    className="rounded-xl border border-white/10 bg-slate-950/70 px-3 py-1 text-xs font-medium text-slate-300"
+                    className="rounded-xl border border-purple-400/30 bg-slate-950/70 px-3 py-1 text-xs font-semibold text-purple-200"
                   >
                     {pill}
                   </span>

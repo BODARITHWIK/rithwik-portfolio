@@ -13,7 +13,8 @@ import {
   FileText,
   ArrowUpRight,
   Boxes,
-  Database
+  Database,
+  Briefcase
 } from "lucide-react";
 
 function Projects() {
@@ -89,26 +90,26 @@ function Projects() {
       badge: "Enterprise Full Stack",
     },
     {
-      id: "digital-marketing-research",
+      id: "bba-business-strategy",
       number: "03",
-      title: "Digital Marketing vs Traditional Marketing",
-      subtitle: "30-Page Comparative Strategy Capstone Paper",
-      category: "Academic Research & Strategy",
+      title: "BBA Strategic Business & Digital Marketing Analytics",
+      subtitle: "Business Administration & Strategy Management",
+      category: "Business Administration & Strategy",
       description:
-        "Comprehensive independent research paper analyzing cost efficiency, audience reach, consumer behavior impact, SWOT matrix, and digital ROI analytics across modern channels.",
+        "Strategic business administration model applying digital marketing channels, ROI analytics, consumer behavior evaluation, market positioning, financial insights, and operational management.",
       technologies: [
-        "Digital Marketing",
-        "Market Research",
-        "SWOT Analysis",
-        "Consumer Behavior",
-        "Content Strategy",
-        "Academic Paper (IJSTM)",
+        "Business Administration",
+        "Digital Marketing Strategy",
+        "Business Analytics",
+        "Strategic Management",
+        "Financial Insights",
+        "Market Positioning",
       ],
       githubUrl: null,
       demoUrl: null,
-      isResearch: true,
-      icon: BookOpen,
-      badge: "BBA Capstone Research",
+      isResearch: false,
+      icon: Briefcase,
+      badge: "BBA Dual Degree Core",
     },
   ];
 

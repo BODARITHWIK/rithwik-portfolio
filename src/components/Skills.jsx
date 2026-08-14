@@ -8,6 +8,7 @@ import {
   Cloud,
   Workflow,
   Database,
+  Briefcase,
   Sparkles,
   CheckCircle2
 } from "lucide-react";
@@ -77,6 +78,20 @@ function Skills() {
       icon: Database,
       color: "border-emerald-400/40 text-emerald-300 bg-emerald-500/10 shadow-[0_0_12px_rgba(16,185,129,0.2)]",
       skills: ["MySQL", "PostgreSQL", "MongoDB", "Redis"],
+    },
+    {
+      id: "bba",
+      title: "BBA & Business",
+      icon: Briefcase,
+      color: "border-pink-400/40 text-pink-300 bg-pink-500/10 shadow-[0_0_12px_rgba(236,72,153,0.2)]",
+      skills: [
+        "Digital Marketing",
+        "Market Research",
+        "SWOT Analysis",
+        "Consumer Behavior",
+        "Content Strategy",
+        "Business Analytics",
+      ],
     },
   ];
 

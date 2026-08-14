@@ -1,4 +1,3 @@
-import { useState } from "react";
 import { motion } from "framer-motion";
 import {
   Github,
@@ -8,19 +7,14 @@ import {
   Sparkles,
   ChevronDown,
   Code2,
-  Terminal,
   Cloud,
-  User,
   Download,
-  Mail,
-  CheckCircle2
+  Mail
 } from "lucide-react";
 
 function Home() {
-  const [activeTab, setActiveTab] = useState("portrait"); // "portrait" | "terminal"
-
   const badges = [
-    "B.Tech CS",
+    "B.Tech CSIT",
     "Cloud Native",
     "DevOps",
     "Full Stack",
@@ -31,17 +25,6 @@ function Home() {
     "React",
     "CI/CD"
   ];
-
-  const codeSnippet = `// Boda Rithwik - Cloud Native Engineer
-const engineer = {
-  name: "BODA RITHWIK",
-  degree: "B.Tech CSIT (CGPA: 8.51)",
-  specialization: "Cloud Native & DevOps",
-  cloud: ["AWS", "Kubernetes", "Docker"],
-  backend: ["Java", "Spring Boot", "REST APIs"],
-  frontend: ["React.js", "TypeScript", "Vite"],
-  status: "Available for Hire 🚀"
-};`;
 
   return (
     <section
@@ -193,92 +176,41 @@ const engineer = {
           </div>
         </motion.div>
 
-        {/* RIGHT COLUMN: MODERN DASHBOARD CARD */}
+        {/* RIGHT COLUMN: CLEAN HERO PORTRAIT FRAME (Spans 5 columns on desktop) */}
         <motion.div
           initial={{ opacity: 0, scale: 0.94 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.8, delay: 0.2, ease: [0.22, 1, 0.36, 1] }}
           className="lg:col-span-5 flex flex-col items-center justify-center w-full"
         >
-          {/* Card View Switcher: Portrait and Code Spec only */}
-          <div className="flex items-center justify-center gap-2 mb-4 z-10 bg-slate-900/90 p-1.5 rounded-full border border-white/10 backdrop-blur-xl">
-            <button
-              onClick={() => setActiveTab("portrait")}
-              className={`flex items-center gap-2 rounded-full px-5 py-1.5 text-xs font-bold transition-all duration-300 ${
-                activeTab === "portrait"
-                  ? "bg-cyan-500/20 text-cyan-300 border border-cyan-400/60 shadow-[0_0_15px_rgba(34,211,238,0.3)]"
-                  : "text-slate-400 hover:text-white"
-              }`}
-            >
-              <User className="h-3.5 w-3.5" />
-              <span>Portrait Photo</span>
-            </button>
-
-            <button
-              onClick={() => setActiveTab("terminal")}
-              className={`flex items-center gap-2 rounded-full px-5 py-1.5 text-xs font-bold transition-all duration-300 ${
-                activeTab === "terminal"
-                  ? "bg-teal-500/20 text-teal-300 border border-teal-400/60 shadow-[0_0_15px_rgba(20,184,166,0.3)]"
-                  : "text-slate-400 hover:text-white"
-              }`}
-            >
-              <Terminal className="h-3.5 w-3.5" />
-              <span>Code Spec</span>
-            </button>
-          </div>
-
           {/* Main Visual Frame */}
           <div className="relative w-full max-w-md rounded-3xl border border-cyan-400/30 bg-slate-900/85 p-4 shadow-[0_0_50px_rgba(34,211,238,0.15)] backdrop-blur-2xl transition-all duration-500 hover:border-cyan-400/60 hover:shadow-[0_0_60px_rgba(34,211,238,0.25)]">
-            
-            {activeTab === "portrait" ? (
-              <div className="relative overflow-hidden rounded-2xl border border-white/10 group">
-                <img
-                  src="/profile.jpg"
-                  alt="Boda Rithwik - B.Tech CS Student"
-                  className="h-[380px] sm:h-[460px] w-full object-cover object-top transition-transform duration-700 group-hover:scale-105"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/20 to-transparent opacity-80" />
+            <div className="relative overflow-hidden rounded-2xl border border-white/10 group">
+              <img
+                src="/profile.jpg"
+                alt="Boda Rithwik - B.Tech CSIT Student"
+                className="h-[380px] sm:h-[480px] w-full object-cover object-top transition-transform duration-700 group-hover:scale-105"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/20 to-transparent opacity-80" />
 
-                {/* Floating Info Overlay Card */}
-                <div className="absolute bottom-4 left-4 right-4 rounded-2xl border border-cyan-400/40 bg-slate-950/90 p-4 backdrop-blur-xl shadow-2xl">
-                  <div className="flex items-center justify-between">
-                    <div>
-                      <div className="text-xs font-bold text-white flex items-center gap-1.5">
-                        <Sparkles className="h-4 w-4 text-cyan-400" />
-                        <span>KL University</span>
-                      </div>
-                      <div className="text-xs font-semibold text-cyan-300 mt-1 font-mono">
-                        B.Tech CSIT (CGPA: 8.51) • PRIMARY
-                      </div>
-                      <div className="text-[11px] text-slate-400 font-sans mt-0.5">
-                        Dual Degree BBA (CGPA: 8.68)
-                      </div>
+              {/* Floating Info Overlay Card */}
+              <div className="absolute bottom-4 left-4 right-4 rounded-2xl border border-cyan-400/40 bg-slate-950/90 p-4 backdrop-blur-xl shadow-2xl">
+                <div className="flex items-center justify-between">
+                  <div>
+                    <div className="text-xs font-bold text-white flex items-center gap-1.5">
+                      <Sparkles className="h-4 w-4 text-cyan-400" />
+                      <span>KL University</span>
+                    </div>
+                    <div className="text-xs font-semibold text-cyan-300 mt-1 font-mono">
+                      B.Tech CSIT (CGPA: 8.51) • PRIMARY
+                    </div>
+                    <div className="text-[11px] text-slate-400 font-sans mt-0.5">
+                      Dual Degree BBA (CGPA: 8.68)
                     </div>
                   </div>
                 </div>
               </div>
-            ) : (
-              <div className="rounded-2xl border border-cyan-400/30 bg-[#040812] p-5 shadow-2xl font-mono text-xs text-slate-200 h-[380px] sm:h-[460px] flex flex-col justify-between overflow-x-auto">
-                <div className="flex items-center justify-between border-b border-white/10 pb-3 mb-3">
-                  <div className="flex items-center gap-2">
-                    <span className="h-3 w-3 rounded-full bg-rose-500/80 inline-block" />
-                    <span className="h-3 w-3 rounded-full bg-amber-500/80 inline-block" />
-                    <span className="h-3 w-3 rounded-full bg-emerald-500/80 inline-block" />
-                    <span className="text-[11px] text-slate-400 ml-2">rithwik-cloud-engineer.ts</span>
-                  </div>
-                  <span className="text-[10px] text-cyan-400 font-bold">TypeScript</span>
-                </div>
-                <pre className="text-cyan-300 font-mono text-[11px] sm:text-xs leading-relaxed whitespace-pre-wrap overflow-y-auto">
-                  {codeSnippet}
-                </pre>
-                <div className="mt-4 pt-3 border-t border-white/10 flex items-center justify-between text-[11px] text-slate-400">
-                  <span className="flex items-center gap-1 text-emerald-400 font-bold">
-                    <CheckCircle2 className="h-3.5 w-3.5" /> Ready for Production
-                  </span>
-                  <span>B.Tech Priority #1</span>
-                </div>
-              </div>
-            )}
+            </div>
           </div>
         </motion.div>
       </div>

@@ -10,7 +10,8 @@ import {
   CheckCircle2,
   GraduationCap,
   FolderKanban,
-  Award
+  Award,
+  Briefcase
 } from "lucide-react";
 
 function About() {
@@ -37,10 +38,10 @@ function About() {
       color: "border-indigo-400/40 text-indigo-300 bg-indigo-500/10 shadow-[0_0_15px_rgba(99,102,241,0.2)]",
     },
     {
-      title: "Projects",
-      value: "4+ Production Specs",
-      sub: "Full-Stack & Cloud Systems",
-      icon: FolderKanban,
+      title: "BBA Business",
+      value: "Dual Degree",
+      sub: "Digital Marketing & Strategy",
+      icon: Briefcase,
       color: "border-purple-400/40 text-purple-300 bg-purple-500/10 shadow-[0_0_15px_rgba(168,85,247,0.2)]",
     },
   ];

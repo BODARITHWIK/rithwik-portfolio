@@ -22,15 +22,20 @@ function Footer() {
         <div className="grid gap-10 md:grid-cols-3 items-start justify-between">
           {/* Brand Col */}
           <div className="space-y-4">
-            <div className="flex items-center gap-3">
+            <div className="flex items-center gap-3.5">
               <img
                 src="/logo.png"
                 alt="Boda Rithwik Logo"
-                className="h-10 w-10 rounded-xl object-contain border border-amber-400/40 bg-black/50 p-0.5 shadow-[0_0_15px_rgba(245,158,11,0.3)]"
+                className="h-12 w-12 rounded-2xl object-contain border border-amber-400/60 bg-black p-1 shadow-[0_0_20px_rgba(245,158,11,0.4)] transition-transform duration-300 hover:scale-105"
               />
-              <span className="text-xl font-black tracking-wider text-white font-outfit uppercase">
-                Boda Rithwik<span className="text-cyan-400">.</span>
-              </span>
+              <div>
+                <span className="text-xl font-black tracking-wider text-white font-outfit uppercase block leading-tight">
+                  Boda Rithwik<span className="text-cyan-400">.</span>
+                </span>
+                <span className="text-xs font-bold text-amber-400/90 font-mono tracking-wider uppercase">
+                  Personal Brand & Monogram
+                </span>
+              </div>
             </div>
             <p className="text-sm leading-relaxed text-slate-300 max-w-sm">
               Cloud-Native Software Engineer | Full-Stack Developer specializing in scalable microservices architectures, Kubernetes, AWS, and DevOps automation.

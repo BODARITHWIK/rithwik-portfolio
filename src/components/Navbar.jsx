@@ -72,14 +72,25 @@ function Navbar() {
           onClick={(e) => handleNavClick(e, "#home")}
           className="group flex items-center gap-3 font-bold tracking-tight text-white focus:outline-none"
         >
-          <img
-            src="/logo.png"
-            alt="Boda Rithwik Logo"
-            className="h-10 w-10 rounded-xl object-contain border border-amber-400/40 bg-black/50 p-0.5 transition-all duration-300 group-hover:scale-105 group-hover:border-amber-400/80 group-hover:shadow-[0_0_20px_rgba(245,158,11,0.5)]"
-          />
-          <span className="text-lg font-black tracking-wider uppercase font-outfit">
-            Rithwik<span className="text-cyan-400">.</span>
-          </span>
+          <div className="relative">
+            <img
+              src="/logo.png"
+              alt="Boda Rithwik Logo"
+              className="h-11 w-11 rounded-xl object-contain border border-amber-400/50 bg-black p-0.5 transition-all duration-300 group-hover:scale-105 group-hover:border-amber-400 group-hover:shadow-[0_0_25px_rgba(245,158,11,0.6)]"
+            />
+            <span className="absolute -top-0.5 -right-0.5 flex h-3 w-3">
+              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-amber-400 opacity-75"></span>
+              <span className="relative inline-flex rounded-full h-3 w-3 bg-amber-400 border border-black"></span>
+            </span>
+          </div>
+          <div className="flex flex-col">
+            <span className="text-base font-black tracking-wider uppercase font-outfit text-white leading-tight">
+              Boda Rithwik<span className="text-cyan-400">.</span>
+            </span>
+            <span className="text-[10px] font-bold text-amber-400/90 font-mono tracking-wider uppercase">
+              Cloud & Full-Stack Eng.
+            </span>
+          </div>
         </a>
 
         {/* Desktop Navigation */}

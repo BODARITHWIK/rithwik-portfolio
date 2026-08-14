@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { motion } from "framer-motion";
 import {
   Github,
@@ -8,9 +9,13 @@ import {
   ChevronDown,
   Code2,
   Award,
+  User,
+  ShieldCheck,
 } from "lucide-react";
 
 function Home() {
+  const [heroView, setHeroView] = useState("portrait"); // "portrait" | "emblem"
+
   const techStackBadges = [
     "React.js",
     "Java / Spring Boot",
@@ -71,9 +76,20 @@ function Home() {
           animate="visible"
           className="space-y-6 sm:space-y-8"
         >
-          {/* Status Badge */}
-          <motion.div variants={textItemVariants} className="inline-block">
-            <div className="inline-flex items-center gap-2.5 rounded-full border border-cyan-400/40 bg-slate-900/80 px-4 py-1.5 backdrop-blur-xl shadow-[0_0_20px_rgba(34,211,238,0.2)]">
+          {/* Brand Tag with Emblem */}
+          <motion.div variants={textItemVariants} className="flex flex-wrap items-center gap-3">
+            <div className="flex items-center gap-2.5 rounded-2xl border border-amber-400/50 bg-black/80 px-3 py-1.5 shadow-[0_0_20px_rgba(245,158,11,0.35)] backdrop-blur-xl">
+              <img
+                src="/logo.png"
+                alt="BR Monogram Logo"
+                className="h-8 w-8 rounded-lg object-contain bg-black p-0.5 border border-amber-400/60"
+              />
+              <span className="text-xs font-black tracking-widest text-amber-300 font-mono uppercase">
+                Boda Rithwik Personal Brand
+              </span>
+            </div>
+
+            <div className="inline-flex items-center gap-2.5 rounded-full border border-cyan-400/40 bg-slate-900/80 px-3.5 py-1.5 backdrop-blur-xl shadow-[0_0_20px_rgba(34,211,238,0.2)]">
               <span className="relative flex h-2.5 w-2.5">
                 <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-cyan-400 opacity-75"></span>
                 <span className="relative inline-flex h-2.5 w-2.5 rounded-full bg-cyan-400"></span>
@@ -194,44 +210,101 @@ function Home() {
           </motion.div>
         </motion.div>
 
-        {/* Right Hero Editorial Portrait Frame (Mobile Responsive) */}
+        {/* Right Hero Editorial Frame with Emblem & Portrait Toggle */}
         <motion.div
           variants={imageVariants}
           initial="hidden"
           animate="visible"
-          className="relative flex items-center justify-center w-full"
+          className="relative flex flex-col items-center justify-center w-full"
         >
+          {/* Interactive View Toggle */}
+          <div className="flex items-center justify-center gap-2 mb-4 z-10">
+            <button
+              onClick={() => setHeroView("portrait")}
+              className={`flex items-center gap-2 rounded-full px-4 py-1.5 text-xs font-bold transition-all duration-300 ${
+                heroView === "portrait"
+                  ? "bg-cyan-500/20 text-cyan-300 border border-cyan-400/60 shadow-[0_0_15px_rgba(34,211,238,0.3)] scale-105"
+                  : "bg-slate-900/80 text-slate-400 border border-white/10 hover:text-white"
+              }`}
+            >
+              <User className="h-3.5 w-3.5" />
+              <span>Portrait Photo</span>
+            </button>
+            <button
+              onClick={() => setHeroView("emblem")}
+              className={`flex items-center gap-2 rounded-full px-4 py-1.5 text-xs font-bold transition-all duration-300 ${
+                heroView === "emblem"
+                  ? "bg-amber-500/25 text-amber-300 border border-amber-400/70 shadow-[0_0_20px_rgba(245,158,11,0.4)] scale-105"
+                  : "bg-slate-900/80 text-slate-400 border border-white/10 hover:text-white"
+              }`}
+            >
+              <Sparkles className="h-3.5 w-3.5 text-amber-400" />
+              <span>Official Brand Emblem</span>
+            </button>
+          </div>
+
           {/* Glowing Backlight Circle */}
-          <div className="absolute inset-0 rounded-full bg-gradient-to-tr from-cyan-500/30 via-indigo-500/20 to-purple-500/30 blur-3xl animate-pulse-glow" />
+          <div className="absolute inset-0 rounded-full bg-gradient-to-tr from-cyan-500/30 via-amber-500/20 to-purple-500/30 blur-3xl animate-pulse-glow" />
 
-          {/* Large Editorial Portrait Container */}
+          {/* Editorial Image Container */}
           <div className="relative w-full max-w-sm sm:max-w-md rounded-3xl border border-cyan-400/30 bg-slate-900/80 p-3 sm:p-4 shadow-[0_0_50px_rgba(34,211,238,0.15)] backdrop-blur-2xl transition-all duration-500 hover:border-cyan-400/60 hover:shadow-[0_0_60px_rgba(34,211,238,0.25)]">
-            <div className="relative overflow-hidden rounded-2xl border border-white/10 group">
+            
+            {/* Always visible Top-Right Emblem Badge */}
+            <div className="absolute top-5 right-5 z-20 flex items-center gap-2 rounded-xl border border-amber-400/60 bg-black/90 px-3 py-1.5 shadow-[0_0_20px_rgba(245,158,11,0.4)] backdrop-blur-md">
               <img
-                src="/profile.jpg"
-                alt="Boda Rithwik - Professional Portrait"
-                className="h-[360px] sm:h-[480px] w-full object-cover object-top transition-transform duration-700 group-hover:scale-105"
+                src="/logo.png"
+                alt="BR Emblem Badge"
+                className="h-6 w-6 rounded-md object-contain bg-black p-0.5 border border-amber-400/40"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/20 to-transparent opacity-75" />
+              <span className="text-[10px] font-black tracking-widest text-amber-300 uppercase font-mono">
+                BR Monogram
+              </span>
+            </div>
 
-              {/* Floating Overlay Badge */}
-              <div className="absolute bottom-3 left-3 right-3 sm:bottom-4 sm:left-4 sm:right-4 rounded-xl border border-white/15 bg-slate-950/85 p-3 sm:p-3.5 backdrop-blur-xl shadow-xl">
-                <div className="flex items-center justify-between">
-                  <div>
-                    <div className="text-xs font-bold text-white flex items-center gap-1.5">
-                      <Sparkles className="h-3.5 w-3.5 text-cyan-400" />
-                      <span>KL University</span>
+            {heroView === "portrait" ? (
+              <div className="relative overflow-hidden rounded-2xl border border-white/10 group">
+                <img
+                  src="/profile.jpg"
+                  alt="Boda Rithwik - Professional Portrait"
+                  className="h-[360px] sm:h-[480px] w-full object-cover object-top transition-transform duration-700 group-hover:scale-105"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/20 to-transparent opacity-75" />
+
+                {/* Floating Overlay Badge */}
+                <div className="absolute bottom-3 left-3 right-3 sm:bottom-4 sm:left-4 sm:right-4 rounded-xl border border-white/15 bg-slate-950/85 p-3 sm:p-3.5 backdrop-blur-xl shadow-xl">
+                  <div className="flex items-center justify-between">
+                    <div>
+                      <div className="text-xs font-bold text-white flex items-center gap-1.5">
+                        <Sparkles className="h-3.5 w-3.5 text-cyan-400" />
+                        <span>KL University</span>
+                      </div>
+                      <div className="text-[10px] sm:text-[11px] font-semibold text-cyan-300 mt-0.5 font-mono">
+                        B.Tech CSIT (CGPA: 8.51) + BBA (CGPA: 8.68)
+                      </div>
                     </div>
-                    <div className="text-[10px] sm:text-[11px] font-semibold text-cyan-300 mt-0.5 font-mono">
-                      B.Tech CSIT (CGPA: 8.51) + BBA (CGPA: 8.68)
+                    <div className="flex h-7 w-7 sm:h-8 sm:w-8 items-center justify-center rounded-lg border border-cyan-400/30 bg-cyan-500/20 text-cyan-300">
+                      <Award className="h-3.5 w-3.5 sm:h-4 sm:w-4" />
                     </div>
-                  </div>
-                  <div className="flex h-7 w-7 sm:h-8 sm:w-8 items-center justify-center rounded-lg border border-cyan-400/30 bg-cyan-500/20 text-cyan-300">
-                    <Award className="h-3.5 w-3.5 sm:h-4 sm:w-4" />
                   </div>
                 </div>
               </div>
-            </div>
+            ) : (
+              <div className="relative overflow-hidden rounded-2xl border border-amber-400/40 bg-black p-4 flex flex-col items-center justify-center group shadow-2xl">
+                <img
+                  src="/logo.png"
+                  alt="Boda Rithwik - Official Brand Emblem"
+                  className="h-[340px] sm:h-[440px] w-full object-contain transition-transform duration-700 group-hover:scale-105 filter drop-shadow-[0_0_30px_rgba(245,158,11,0.3)]"
+                />
+                <div className="w-full mt-2 rounded-xl border border-amber-400/30 bg-slate-950/90 p-3 text-center backdrop-blur-xl">
+                  <div className="text-xs font-black tracking-widest text-amber-300 uppercase font-outfit">
+                    BODA RITHWIK
+                  </div>
+                  <div className="text-[10px] font-medium text-slate-300 font-mono mt-0.5">
+                    Official Gold & Silver Personal Emblem
+                  </div>
+                </div>
+              </div>
+            )}
           </div>
         </motion.div>
       </div>

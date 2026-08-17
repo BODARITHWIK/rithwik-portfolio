@@ -44,7 +44,7 @@ function SkillMarquee() {
           animate={{ x: ["0%", "-50%"] }}
           transition={{
             ease: "linear",
-            duration: 25,
+            duration: 60,
             repeat: Infinity,
           }}
         >
@@ -67,7 +67,7 @@ function SkillMarquee() {
           animate={{ x: ["-50%", "0%"] }}
           transition={{
             ease: "linear",
-            duration: 30,
+            duration: 65,
             repeat: Infinity,
           }}
         >

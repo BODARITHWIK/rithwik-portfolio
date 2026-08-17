@@ -8,7 +8,6 @@ import About from "./components/About";
 import Education from "./components/Education";
 import Skills from "./components/Skills";
 import Projects from "./components/Projects";
-import CareerGuidance from "./components/CareerGuidance";
 import Certificates from "./components/Certificates";
 import Resumes from "./components/Resumes";
 import GitHubActivity from "./components/GitHubActivity";
@@ -33,7 +32,6 @@ function App() {
         <Education />
         <Skills />
         <Projects />
-        <CareerGuidance />
         <Certificates />
         <Resumes />
         <GitHubActivity />

@@ -14,7 +14,6 @@ function Navbar() {
     { name: "Education", href: "#education" },
     { name: "Skills", href: "#skills" },
     { name: "Projects", href: "#projects" },
-    { name: "Career Guidance", href: "#career-guidance" },
     { name: "Certifications", href: "#certificates" },
     { name: "Resumes", href: "#resumes" },
     { name: "Contact", href: "#contact" },

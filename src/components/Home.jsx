@@ -72,7 +72,7 @@ function Home() {
               </span>
             </h1>
             <h3 className="text-lg sm:text-2xl font-bold text-cyan-300 font-outfit pt-1">
-              B.Tech CSIT & BBA Dual Degree Student <span className="text-slate-500">|</span> Cloud Native Software Engineering & Business
+              B.Tech CSIT & BBA Dual Degree Student <span className="text-slate-500">|</span> Cloud Native Software Engineering & Business management solutions.
             </h3>
           </div>
 

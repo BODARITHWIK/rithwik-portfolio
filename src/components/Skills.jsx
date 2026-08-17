@@ -103,7 +103,7 @@ function Skills() {
       : categories.filter((c) => c.id === activeCategory);
 
   return (
-    <section id="skills" className="relative py-20 lg:py-28 overflow-hidden bg-[#070d19]">
+    <section id="skills" className="relative pt-28 pb-20 lg:pt-40 lg:pb-28 overflow-hidden bg-[#070d19]">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         
         {/* Section Header */}
@@ -127,7 +127,7 @@ function Skills() {
         </motion.div>
 
         {/* Interactive Filter Pills */}
-        <div className="mt-8 flex flex-wrap items-center gap-2">
+        <div className="mt-10 sm:mt-12 flex flex-wrap items-center gap-2">
           <button
             onClick={() => setActiveCategory("all")}
             className={`rounded-full px-4 py-2 text-xs font-bold transition-all duration-300 ${
@@ -155,12 +155,12 @@ function Skills() {
       </div>
 
       {/* Infinite Skill Ticker Marquee */}
-      <div className="mt-8">
+      <div className="mt-10 sm:mt-12">
         <SkillMarquee />
       </div>
 
       {/* Grid of Skill Cards */}
-      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 mt-10">
+      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 mt-12 sm:mt-14">
         <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
           {filteredCategories.map((cat, idx) => {
             const Icon = cat.icon;

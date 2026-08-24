@@ -274,13 +274,17 @@ function Projects() {
                   {/* Right Action Side */}
                   <div className="lg:col-span-4 flex flex-col justify-center gap-3 pt-4 lg:pt-0 border-t lg:border-t-0 lg:border-l border-white/10 lg:pl-8">
                     {project.isResearch ? (
-                      <div className="flex flex-col gap-2.5 w-full">
+                      <div className="flex flex-col gap-3 w-full">
                         <button
-                          onClick={() => setSelectedResearch(true)}
-                          className="inline-flex w-full items-center justify-center gap-2.5 rounded-2xl border border-cyan-400/50 bg-gradient-to-r from-cyan-500/20 to-teal-500/15 px-5 py-3.5 text-xs sm:text-sm font-bold text-cyan-300 shadow-[0_0_20px_rgba(34,211,238,0.25)] transition-all duration-300 hover:from-cyan-400 hover:to-teal-300 hover:text-slate-950 hover:shadow-[0_0_30px_rgba(34,211,238,0.5)] hover:scale-[1.02] min-h-[48px]"
+                          type="button"
+                          onClick={() => {
+                            setSelectedResearch(true);
+                            setActiveTab("overview");
+                          }}
+                          className="inline-flex w-full items-center justify-center gap-2.5 rounded-2xl border border-cyan-400/60 bg-gradient-to-r from-cyan-500/25 via-teal-500/20 to-cyan-500/25 px-5 py-3.5 text-xs sm:text-sm font-bold text-cyan-300 shadow-[0_0_25px_rgba(34,211,238,0.3)] transition-all duration-300 hover:from-cyan-400 hover:to-teal-300 hover:text-slate-950 hover:shadow-[0_0_35px_rgba(34,211,238,0.5)] hover:scale-[1.02] min-h-[48px]"
                         >
                           <BookOpen className="h-4 w-4" />
-                          <span>Read Research Doc & Insights</span>
+                          <span>Read Research Document</span>
                           <ArrowUpRight className="h-4 w-4" />
                         </button>
 
@@ -289,10 +293,10 @@ function Projects() {
                           target="_blank"
                           rel="noreferrer"
                           download="Boda_Rithwik_BBA_Research_Paper.pdf"
-                          className="inline-flex w-full items-center justify-center gap-2 rounded-2xl border border-purple-400/40 bg-slate-950/90 px-4 py-3 text-xs sm:text-sm font-bold text-purple-300 transition-all duration-300 hover:border-purple-400 hover:bg-purple-500/20 hover:text-white min-h-[44px]"
+                          className="inline-flex w-full items-center justify-center gap-2 rounded-2xl border border-purple-400/50 bg-slate-950/90 px-4 py-3 text-xs sm:text-sm font-bold text-purple-300 transition-all duration-300 hover:border-purple-400 hover:bg-purple-500/20 hover:text-white hover:shadow-[0_0_20px_rgba(168,85,247,0.3)] min-h-[44px]"
                         >
                           <Download className="h-4 w-4 text-purple-400" />
-                          <span>Download Full 30-Page Doc (PDF)</span>
+                          <span>Download Research Doc (PDF)</span>
                         </a>
                       </div>
                     ) : (
